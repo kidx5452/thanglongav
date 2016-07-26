@@ -1,0 +1,10 @@
+articleview.lbl_listart = List Position Article
+articleview.lbl_avatar = Thumbnail
+articleview.lbl_name = Title
+articleview.lbl_poskey = Display Position
+articleview.lbl_action = Action
+articleview.lbl_artposconfig = Article Position Config
+articleview.lbl_position = Position
+articleview.lbl_chooseart = Choose article
+articleview.lbl_sort = Sort
+articleview.lbl_captions = Caption

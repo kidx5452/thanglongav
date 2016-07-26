@@ -1,0 +1,17 @@
+user.lbl_list = Danh sách thành viên
+user.lbl_username = Tên tài khoản
+user.lbl_creator = Người tạo
+user.lbl_role = Quyền
+user.lbl_basicinfo = Thông tin cơ bản
+user.lbl_moreinfo = Thông tin thêm
+user.lbl_password = Mật khẩu
+user.lbl_email = Địa chỉ email
+user.lbl_firstname = Họ
+user.lbl_lastname = Tên
+user.lbl_avatar = Ảnh đại diện
+user.lbl_birthday = Ngày sinh
+user.lbl_address = Địa chỉ
+user.lbl_phone = Số điện thoại
+user.lbl_gender = Giới tính
+user.lbl_male = Nam
+user.lbl_female = Nữ

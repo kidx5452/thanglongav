@@ -1,0 +1,6 @@
+rolegroup.lbl_rolelist = Danh sách nhóm quyền
+rolegroup.lbl_name = Tên
+rolegroup.lbl_level = Cấp độ
+rolegroup.lbl_creator = Người tạo
+rolegroup.lbl_roleinfo = Thông tin nhóm quyền
+rolegroup.lbl_perlist = Danh sách quyền

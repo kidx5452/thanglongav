@@ -1,0 +1,17 @@
+article.lbl_list = Article List
+article.lbl_addnew = Add new article
+article.lbl_info = Infomation
+article.lbl_category = Category
+article.lbl_lang = Language
+article.lbl_name = Title
+article.lbl_creator = Creator
+article.lbl_status = Status
+article.lbl_show = Show
+article.lbl_hide = Hide
+article.lbl_caption = Caption
+article.lbl_descriptions = Desciption
+article.lbl_thumb = Thumb
+article.lbl_content = Content
+article.lbl_coveravatar = Cover Avatar For Home
+article.lbl_coverphoto = Cover Photo
+article.lbl_covervideo = Cover Video

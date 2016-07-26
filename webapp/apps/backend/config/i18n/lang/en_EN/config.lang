@@ -1,0 +1,9 @@
+config.lbl_defaultimageconfig = Default Image Config
+config.lbl_imagenotice = <b>Notice:</b> All image must be JPG format
+config.lbl_fbthumb = Facebook Thumb
+config.lbl_articlecover = Article Cover
+config.lbl_categorycover = Category Cover
+config.lbl_dashboardcover = Dashboard Cover
+config.lbl_eventcover = Event Cover
+config.lbl_searchcover = Search Cover
+config.lbl_updatesucc = Update successfully

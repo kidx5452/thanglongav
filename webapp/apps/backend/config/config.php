@@ -5,8 +5,8 @@ return array(
         'adapter'  => 'Mysql',
         'host'     => 'localhost',
         'username' => 'root',
-        'password' => '',
-        'dbname'   => 'webapp',
+        'password' => '123456$',
+        'dbname'   => 'iii',
         'charset'  => 'utf8',
     ),
     'application' => array(

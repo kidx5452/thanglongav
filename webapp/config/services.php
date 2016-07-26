@@ -42,7 +42,6 @@ $di->setShared('router', function () {
 $di->setShared('url', function () use ($config) {
     $url = new UrlResolver();
     $url->setBaseUri($config->application->baseUri);
-
     return $url;
 });
 

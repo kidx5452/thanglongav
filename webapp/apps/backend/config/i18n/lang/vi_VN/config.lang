@@ -1,0 +1,9 @@
+config.lbl_defaultimageconfig = Cấu hình ảnh mặc định
+config.lbl_imagenotice = <b>Lưu ý:</b> Tất cả phải ở định dạng ảnh JPG
+config.lbl_fbthumb = Ảnh đại diện Facebook
+config.lbl_articlecover = Ảnh bìa bài viết
+config.lbl_categorycover = Ảnh bìa danh mục
+config.lbl_dashboardcover = Ảnh bìa bảng điều khiển
+config.lbl_eventcover = Ảnh bìa trang sự kiện
+config.lbl_searchcover = Ảnh bìa trang tìm kiếm
+config.lbl_updatesucc = Cập nhật thành công

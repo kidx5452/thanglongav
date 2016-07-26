@@ -1,0 +1,15 @@
+event.lbl_list = Danh sách sự kiện
+event.lbl_name = Tiêu đề
+event.lbl_descriptions = Mô tả
+event.lbl_class = Lớp học
+event.lbl_coverphoto = Ảnh bìa
+event.lbl_status = Trạng thái
+event.lbl_user = Học sinh
+event.lbl_captions= Thông tin
+event.lbl_datecreate= Ngày tạo
+event.lbl_basicinfo = Thông tin sự kiện
+event.lbl_tagclass = Đánh dấu lớp học
+event.lbl_taguser = Đánh dấu user
+event.lbl_startdate = Từ ngày
+event.lbl_enddate = Đến ngày
+event.lbl_location = Địa điểm

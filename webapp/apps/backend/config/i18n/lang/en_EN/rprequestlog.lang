@@ -1,0 +1,10 @@
+rprequestlog.lbl_rprequestlog = Report Request Log
+rprequestlog.lbl_username = Username
+rprequestlog.lbl_logcount = Count
+rprequestlog.lbl_selectdate = Select Date Rage
+rprequestlog.lbl_viewdetails = Request Details Of
+rprequestlog.lbl_link = URL
+rprequestlog.lbl_ip = IP Address
+rprequestlog.lbl_date = Request Time
+rprequestlog.lbl_storagelimit = The statistical storage time of request log is
+rprequestlog.lbl_day = days

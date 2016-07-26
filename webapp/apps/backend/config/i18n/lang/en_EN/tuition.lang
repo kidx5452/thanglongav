@@ -1,0 +1,9 @@
+tuition.lbl_list = Tuition List
+tuition.lbl_name = Title
+tuition.lbl_price = Amount
+tuition.lbl_status = Status
+tuition.lbl_expired_date = Expired date
+tuition.lbl_start_date = Start date
+tuition.lbl_viewed = Viewed Status
+tuition.lbl_captions = Captions
+tuition.lbl_basicinfo = Tuition Information

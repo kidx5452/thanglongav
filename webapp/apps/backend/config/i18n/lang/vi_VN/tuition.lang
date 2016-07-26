@@ -1,0 +1,9 @@
+tuition.lbl_list = Danh sách yêu cầu đóng học phí
+tuition.lbl_name = Tiêu đề
+tuition.lbl_price = Mức phí
+tuition.lbl_status = Trạng thái
+tuition.lbl_expired_date = Ngày hết hạn
+tuition.lbl_start_date = Ngày bắt đầu
+tuition.lbl_viewed = Trạng thái xem
+tuition.lbl_captions = Mô tả
+tuition.lbl_basicinfo = Thông tin học phí

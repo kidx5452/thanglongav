@@ -1,0 +1,17 @@
+user.lbl_list = User List
+user.lbl_username = Username
+user.lbl_creator = Creator
+user.lbl_role = Role
+user.lbl_basicinfo = Basic Information
+user.lbl_moreinfo = More Information
+user.lbl_password = Password
+user.lbl_email = Email Address
+user.lbl_firstname = First Name
+user.lbl_lastname = Last Name
+user.lbl_avatar = Avatar
+user.lbl_birthday = Birthday
+user.lbl_address = Address
+user.lbl_phone = Phone
+user.lbl_gender = Gender
+user.lbl_male = Male
+user.lbl_female = Female

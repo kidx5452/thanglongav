@@ -1,0 +1,10 @@
+articleview.lbl_listart = Danh sách bài viết hiển thị
+articleview.lbl_avatar = Ảnh đại diện
+articleview.lbl_name = Tiêu đề
+articleview.lbl_poskey = Vị trí hiển thị
+articleview.lbl_action = Hành động
+articleview.lbl_artposconfig = Cấu hình hiển thị bài viết
+articleview.lbl_position = Vị trí
+articleview.lbl_chooseart = Chọn bài viết
+articleview.lbl_sort = Thứ tự sắp xếp
+articleview.lbl_captions = Mô tả

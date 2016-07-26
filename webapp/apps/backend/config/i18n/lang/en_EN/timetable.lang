@@ -1,0 +1,8 @@
+timetable.lbl_list = Time Table List
+timetable.lbl_name = Name
+timetable.lbl_class = Class
+timetable.lbl_status = Status
+timetable.lbl_user = Pupil
+timetable.lbl_captions= Content
+timetable.lbl_datecreate= Datecreate
+timetable.lbl_basicinfo = Time Table Information

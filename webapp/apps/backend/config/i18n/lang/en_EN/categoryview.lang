@@ -1,0 +1,5 @@
+categoryview.lbl_catdisplay = Category Display Config
+categoryview.lbl_position = Position
+categoryview.lbl_catname = Enter Category Name
+categoryview.lbl_catnamedesc = Type some characters, system will return a suggestion list
+categoryview.lbl_selectedcat = Selected Category

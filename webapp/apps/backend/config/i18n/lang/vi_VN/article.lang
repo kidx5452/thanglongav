@@ -1,0 +1,17 @@
+article.lbl_list = Danh sách bài viết
+article.lbl_addnew = Thêm mới bài viết
+article.lbl_info = Thông tin
+article.lbl_category = Danh mục
+article.lbl_lang = Ngôn ngữ
+article.lbl_name = Tiêu đề
+article.lbl_creator = Người đăng
+article.lbl_status = Trạng thái
+article.lbl_show = Hiện
+article.lbl_hide = Ẩn
+article.lbl_caption = Ghi chú
+article.lbl_descriptions = Mô tả
+article.lbl_thumb = Ảnh đại diện
+article.lbl_content = Nội dung
+article.lbl_coveravatar = Ảnh đại diện trang chủ
+article.lbl_coverphoto = Ảnh bìa
+article.lbl_covervideo = Video đại diện

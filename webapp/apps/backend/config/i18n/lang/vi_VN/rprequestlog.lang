@@ -1,0 +1,10 @@
+rprequestlog.lbl_rprequestlog = Thống kê lượt truy cập
+rprequestlog.lbl_username = Tên tài khoản
+rprequestlog.lbl_logcount = Số lượt truy cập
+rprequestlog.lbl_selectdate = Chọn khoảng ngày
+rprequestlog.lbl_viewdetails = Chi tiết lượt truy cập của
+rprequestlog.lbl_link = Đường dẫn
+rprequestlog.lbl_ip = Địa chỉ IP
+rprequestlog.lbl_date = Thời gian truy cập
+rprequestlog.lbl_storagelimit = Thời gian lưu trữ thống kê lượt truy cập là
+rprequestlog.lbl_day = ngày

@@ -1,0 +1,15 @@
+event.lbl_list = Event List
+event.lbl_name = Name
+event.lbl_descriptions = Description
+event.lbl_class = Class
+event.lbl_coverphoto = Cover Photo
+event.lbl_status = Status
+event.lbl_user = Pupil
+event.lbl_captions= Content
+event.lbl_datecreate= Datecreate
+event.lbl_basicinfo = Event Information
+event.lbl_tagclass = Tag Class
+event.lbl_taguser = Tag User
+event.lbl_startdate = From
+event.lbl_enddate = To
+event.lbl_location = Location

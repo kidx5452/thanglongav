@@ -1,0 +1,5 @@
+categoryview.lbl_catdisplay = Cấu hình hiển thị danh mục
+categoryview.lbl_position = Vị trí
+categoryview.lbl_catname = Tên danh mục
+categoryview.lbl_catnamedesc = Gõ 1 số kí tự của tên danh mục, hệ thống sẽ trả về danh sách gợi ý
+categoryview.lbl_selectedcat = Danh mục đã chọn
