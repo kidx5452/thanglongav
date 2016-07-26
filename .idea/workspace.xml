@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ec92ad8-f7c7-42c5-b135-e129b7baec44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/apps/backend/Module.php" afterPath="$PROJECT_DIR$/webapp/apps/backend/Module.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/apps/backend/config/config.php" afterPath="$PROJECT_DIR$/webapp/apps/backend/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/apps/backend/controllers/IndexController.php" afterPath="$PROJECT_DIR$/webapp/apps/backend/controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/apps/backend/library/Module.php" afterPath="$PROJECT_DIR$/webapp/apps/backend/library/Module.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/apps/frontend/config/config.php" afterPath="$PROJECT_DIR$/webapp/apps/frontend/config/config.php" />
-    </list>
+    <list default="true" id="1ec92ad8-f7c7-42c5-b135-e129b7baec44" name="Default" comment="" />
     <ignored path="cms.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,38 +21,7 @@
     <favorites_list name="cms" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/apps/backend/views/index.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="130" column="53" selection-start-line="130" selection-start-column="53" selection-end-line="130" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/apps/backend/config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/apps/backend/controllers/IndexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -513,7 +475,7 @@
       <updated>1468285968848</updated>
       <workItem from="1468285970180" duration="8024000" />
       <workItem from="1469001433111" duration="2366000" />
-      <workItem from="1469504700094" duration="10565000" />
+      <workItem from="1469504700094" duration="10645000" />
     </task>
     <task id="LOCAL-00001" summary="Upload Base">
       <created>1469520613611</created>
@@ -526,11 +488,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20955000" />
+    <option name="totallyTimeSpent" value="21035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34061834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -977,8 +939,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/apps/backend/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
+        <state relative-caret-position="430">
+          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
           <folding />
         </state>
       </provider>
