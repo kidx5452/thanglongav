@@ -40,16 +40,17 @@ class Module implements ModuleDefinitionInterface
      */
     public function registerServices(DiInterface $di)
     {
-
+        global $config;
         /**
          * Read common configuration
          */
-         $config = $di->has('config') ? $di->getShared('config') : null;
+         //$config = $di->has('config') ? $di->getShared('config') : null;
         /**
          * Try to load local configuration
          */
         if (file_exists(__DIR__ . '/config/config.php')) {
-            $override = new Config(include __DIR__ . '/config/config.php');;
+            //$override = new Config(include __DIR__ . '/config/config.php');;
+            $override = include __DIR__ . '/config/config.php';
 
             if ($config instanceof Config) {
                 $config->merge($override);
