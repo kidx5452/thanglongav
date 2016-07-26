@@ -1,5 +1,5 @@
 <!--jsTree-->
-<link rel="stylesheet" type="text/css" href="/js/jstree/themes/default/style.min.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/jstree/themes/default/style.min.css"/>
 <style>
     #jstree .label{vertical-align: 1px;}
 </style>
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/js/jstree/jstree.min.js"></script>
+<script type="text/javascript" src="/backend_res/js/jstree/jstree.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {

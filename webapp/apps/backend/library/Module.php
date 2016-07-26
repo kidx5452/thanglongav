@@ -116,30 +116,21 @@ class Module
     public static function Sidebar($langarr)
     {
         global $config;
-        $baseuri = $config->application->baseUri;
+        $baseuri = rtrim($config->application->baseUri,"/");
         $sidebar[] = array("name" => $langarr['sidebar.home'], "icon" => "zmdi zmdi-home", "key" => "loginsystem", "controller" => "$baseuri/index/index");
         $sidebar[] = array("name" => $langarr['sidebar.article'], "icon" => "zmdi zmdi-file-text", "key" => "news", "controller" => "$baseuri/article/index");
         $sidebar[] = array("name" => $langarr['sidebar.album'], "icon" => "zmdi zmdi-collection-image", "key" => "albummedia", "controller" => "$baseuri/albummedia/index");
         $sidebar[] = array("name" => $langarr['sidebar.category'], "icon" => "zmdi zmdi-folder", "key" => "category", "controller" => "$baseuri/category/index");
-        $sidebar[] = array("name" => $langarr['sidebar.event'], "icon" => "zmdi zmdi-flag", "key" => "event", "controller" => "$baseuri/event/index");
-        $sidebar[] = array("name" => $langarr['sidebar.study'], "icon" => "zmdi zmdi-library", "key" => "classobj,pupil,teacher", "controller" => "javascript:void(0)", "child" => array(
-                array("name" => $langarr['sidebar.classobj'], "key" => "classobj", "controller" => "$baseuri/classobj/index"),
-                array("name" => $langarr['sidebar.pupil'], "key" => "pupil", "controller" => "$baseuri/pupil/index"),
-                array("name" => $langarr['sidebar.teacher'], "key" => "teacher", "controller" => "$baseuri/teacher/index"),
-                array("name" => $langarr['sidebar.userpostition'], "key" => "userpostition", "controller" => "$baseuri/userpostition/index")
-        ));
+
         $sidebar[] = array("name" => $langarr['sidebar.account'], "icon" => "zmdi zmdi-account", "key" => "user,rolegroup", "controller" => "javascript:void(0)", "child" => array(
             array("name" => $langarr['sidebar.user'], "key" => "loginsystem", "controller" => "$baseuri/user/index"),
             array("name" => $langarr['sidebar.rolegroup'], "key" => "loginsystem", "controller" => "$baseuri/rolegroup/index")
         ));
-        $sidebar[] = array("name" => $langarr['sidebar.report'], "icon" => "zmdi zmdi-assignment", "key" => "rprequestlog", "controller" => "javascript:void(0)", "child" => array(
-            array("name" => $langarr['sidebar.rprequestlog'], "key" => "rprequestlog", "controller" => "$baseuri/rprequestlog/index")
-        ));
+
         $sidebar[] = array("name" => $langarr['sidebar.displayconfig'], "icon" => "zmdi zmdi-settings-square", "key" => "categoryview,articleview,config", "controller" => "javascript:void(0)", "child" => array(
             array("name" => $langarr['sidebar.category'], "key" => "categoryview", "controller" => "$baseuri/categoryview/index"),
             array("name" => $langarr['sidebar.article'], "key" => "articleview", "controller" => "$baseuri/articleview/index"),
             array("name" => $langarr['sidebar.imageconfig'], "key" => "config", "controller" => "$baseuri/config/image"),
-            array("name" => $langarr['sidebar.confignote'], "key" => "config", "controller" => "$baseuri/config/note"),
         ));
         return $sidebar;
     }

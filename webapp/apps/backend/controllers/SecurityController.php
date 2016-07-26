@@ -9,7 +9,7 @@ use Webapp\Backend\Utility\Helper;
 class SecurityController extends ControllerBase {
     public function beforeExecuteRoute($dispatcher)
     {
-        $this->view->activesidebar = "/sercurity/login";
+        $this->view->activesidebar = "sercurity/login";
     }
 
     /***
@@ -50,7 +50,7 @@ class SecurityController extends ControllerBase {
 
     public function logoutAction(){
         $this->session->destroy();
-        $this->response->redirect("security/login");
+        $this->response->redirect("/security/login");
     }
 
     public function messageAction(){

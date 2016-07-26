@@ -1,18 +1,23 @@
 <?php
 namespace Webapp\Backend\Controllers;
+use Webapp\Backend\Locale\Culture;
+use Webapp\Backend\Models\Category;
+use Webapp\Backend\Models\CategoryView;
+
 class CategoryviewController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "categoryview";
-        $this->view->activesidebar = "/categoryview/index";
+        $this->view->activesidebar = $config->application->baseUri."categoryview/index";
         parent::initialize();
     }
     public function indexAction()
     {
         if (!$this->checkpermission("categoryview_view")) return false;
         $poslist = Category::position();
-        $langlist = Language::lang();
+        $langlist = Culture::lang();
         $this->view->catpos = $poslist;
         $this->view->langlist = $langlist;
         $q = $this->request->getQuery("pos", "string") ? $this->request->getQuery("pos", "string") : $poslist[0]['key'];
@@ -25,7 +30,7 @@ class CategoryviewController extends ControllerBase
                     if ($o) {
                         try {
                             $o->delete();
-                        } catch (Exception $e) {
+                        } catch (\Exception $e) {
                             $this->flash->error($e->getMessage());
                         }
                     }
@@ -40,12 +45,12 @@ class CategoryviewController extends ControllerBase
                             $o->map_object($datapost);
                             $o->save();
                             $i++;
-                        } catch (Exception $e) {
+                        } catch (\Exception $e) {
                             $this->flash->error($e->getMessage());
                         }
                     }
                     if($i>sizeof($selectedCat)) $this->flash->success("Saved Successfully !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }

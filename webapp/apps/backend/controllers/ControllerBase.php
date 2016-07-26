@@ -21,7 +21,7 @@ class ControllerBase extends Controller
         $this->controllername = $controller;
         $this->actionname = $action;
         if (!$this->session->has("uinfo")) {
-            if ($fullcontroleraction != "security/login") $this->response->redirect("backend/security/login");
+            if ($fullcontroleraction != "security/login") $this->response->redirect("security/login");
         }
         $this->userinfo = $this->view->uinfo = $this->session->get("uinfo");
         /*Init Lang*/

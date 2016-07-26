@@ -1,11 +1,17 @@
 <?php
 namespace Webapp\Backend\Controllers;
+use Webapp\Backend\Models\Rolegroup;
+use Webapp\Backend\Models\User;
+use Webapp\Backend\Models\UserRole;
+use Webapp\Backend\Utility\Helper;
+
 class UserController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "user";
-        $this->view->activesidebar = "/user/index";
+        $this->view->activesidebar = $config->application->baseUri."user/index";
         parent::initialize();
     }
 
@@ -65,7 +71,7 @@ class UserController extends ControllerBase
                 // </editor-fold>
                 $o->save();
                 $this->flash->success("Information saved !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 if((int)$e->getCode()==23000) $this->flash->error($this->culture['general.lbl_duplicateuser']);
                 else $this->flash->error($e->getMessage());
             }
@@ -94,7 +100,7 @@ class UserController extends ControllerBase
                     $urole->save();
                 }
                 $this->flash->success("Save Successfully !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -118,7 +124,7 @@ class UserController extends ControllerBase
         if ($ur) {
             try {
                 $ur->delete();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -128,7 +134,7 @@ class UserController extends ControllerBase
             try {
                 $o->delete();
                 $this->flash->success("Delete Successfully !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }

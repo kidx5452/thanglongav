@@ -3,9 +3,9 @@ return new \Phalcon\Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => '123456$',
-        'dbname'      => 'iii',
+        'username'    => 'thanglonga_demo',
+        'password'    => 'demo',
+        'dbname'      => 'thanglonga_demo',
         'charset'     => 'utf8',
     ),
     'application' => array(

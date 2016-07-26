@@ -105,7 +105,7 @@
     });
 </script>
 <!--typeahead-->
-<script type="text/javascript" src="/js/bootstrap3-typeahead.js"></script>
+<script type="text/javascript" src="{{ url('/js/bootstrap3-typeahead.js') }}"></script>
 <script type="text/javascript">
     suggesstion('tagclass', 'tagclassarea', '{{ url('/classobj/getbyname') }}', 'classid[]');
     suggesstion('taguser', 'taguserarea', '{{ url('/user/getbyname') }}', 'userid[]');

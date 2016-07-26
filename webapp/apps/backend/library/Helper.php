@@ -314,11 +314,11 @@ class Helper
     {
         return '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
     }
-    public static function average(...$nums)
+    public static function average($nums)
     {
-        $total = 0;
+       /* $total = 0;
         foreach($nums as $num) $total += $num;
-        return $total/count($nums);
+        return $total/count($nums);*/
     }
     public static function average_byarray($nums = array())
     {

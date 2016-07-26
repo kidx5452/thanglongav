@@ -1,5 +1,8 @@
 <?php
 namespace Webapp\Backend\Controllers;
+use Webapp\Backend\Models\ConfigNotecircle;
+use Webapp\Backend\Utility\Helper;
+
 class ConfigController extends ControllerBase
 {
     public function initialize()
@@ -9,8 +12,9 @@ class ConfigController extends ControllerBase
     }
 
     public function imageAction(){
+        global $config;
         if (!$this->checkpermission("config_update")) return false;
-        $this->view->activesidebar = "/config/image";
+        $this->view->activesidebar = $config->application->baseUri."config/image";
         if($this->request->isPost()) {
             try {
                 $fbthumb = $this->upload_image_key('fbthumb', 'fb-thumb');
@@ -20,7 +24,7 @@ class ConfigController extends ControllerBase
                 $eventcover = $this->upload_image_key('eventcover', 'event-cover');
                 $searchcover = $this->upload_image_key('searchcover', 'search-cover');
                 $this->flash->success($this->culture['config.lbl_updatesucc']);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -46,7 +50,8 @@ class ConfigController extends ControllerBase
         return $target_file;
     }
     public function noteAction(){
-        $this->view->activesidebar = "/config/note";
+        global $config;
+        $this->view->activesidebar = $config->application->baseUri."/config/note";
         if($this->request->isPost()){
             ConfigNotecircle::find()->delete();
             $datapost = Helper::post_to_array("keys,name,contents");
@@ -59,7 +64,7 @@ class ConfigController extends ControllerBase
             }
             $this->flash->success($this->view->labelkey['general.lbl_process_success']);
         }
-        $cursor = ConfigNotecircle::find();        
+        $cursor = ConfigNotecircle::find();
         foreach($cursor as $item) $confignote[$item->keys] = $item;
         $this->view->object = $confignote;
     }

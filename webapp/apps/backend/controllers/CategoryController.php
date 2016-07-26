@@ -1,17 +1,24 @@
 <?php
 namespace Webapp\Backend\Controllers;
+use Webapp\Backend\Locale\Culture;
+use Webapp\Backend\Models\AtCat;
+use Webapp\Backend\Models\Category;
+use Webapp\Backend\Models\CategoryView;
+use Webapp\Backend\Utility\Helper;
+
 class CategoryController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "category";
-        $this->view->activesidebar = "/category/index";
+        $this->view->activesidebar = $config->application->baseUri."category/index";
         parent::initialize();
     }
     public function indexAction()
     {
         if (!$this->checkpermission("category_view")) return false;
-        $langlist = Language::lang();
+        $langlist = Culture::lang();
         $this->view->langlist = $langlist;
         $l = $this->request->getQuery('lang', 'string') ? $this->request->getQuery('lang', 'string') : $langlist['vi_VN']['key'];
         $cattree = self::getMenu(0, $l);
@@ -92,7 +99,7 @@ class CategoryController extends ControllerBase
                 $o->save();
                 $this->flash->success($this->view->labelkey['general.lbl_process_success']);
                 if($_POST['backurl']) header('Location: ' . $_POST['backurl']);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -100,7 +107,7 @@ class CategoryController extends ControllerBase
         $this->view->object = $o;
         $listdata = Category::find();
         $this->view->listdata = $listdata;
-        $this->view->langlist = Language::lang();
+        $this->view->langlist = Culture::lang();
         $this->view->backurl = strlen($this->request->getHTTPReferer())<=0? $this->view->activesidebar: $this->request->getHTTPReferer();
     }
 
@@ -124,7 +131,7 @@ class CategoryController extends ControllerBase
         if ($cv) {
             try {
                 $cv->delete();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -134,7 +141,7 @@ class CategoryController extends ControllerBase
             try {
                 $o->delete();
                 $this->flash->success($this->view->labelkey['general.lbl_process_success']);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }

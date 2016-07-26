@@ -1,11 +1,17 @@
 <?php
 namespace Webapp\Backend\Controllers;
+use Webapp\Backend\Locale\Culture;
+use Webapp\Backend\Models\Article;
+use Webapp\Backend\Models\ArticleView;
+use Webapp\Backend\Utility\Helper;
+
 class ArticleviewController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "articleview";
-        $this->view->activesidebar = "/articleview/index";
+        $this->view->activesidebar = $config->application->baseUri."articleview/index";
         parent::initialize();
     }
     public function indexAction()
@@ -24,9 +30,9 @@ class ArticleviewController extends ControllerBase
     public function formAction()
     {
         $this->view->articlepos = Article::position();
-        $this->view->langlist = Language::lang();
+        $this->view->langlist = Culture::lang();
         $q = $this->request->getQuery("pos", "string") ? $this->request->getQuery("pos", "string") : $this->articlepos[0]['key'];
-        $l = $this->request->getQuery('lang','string') ? $this->request->getQuery('lang','string') : Language::lang(0)['key'];
+        $l = $this->request->getQuery('lang','string') ? $this->request->getQuery('lang','string') : Culture::lang(0)['key'];
         $id = $this->request->getQuery('id','string');
         if(!empty($id)){
             if (!$this->checkpermission("articleview_update")) return false;
@@ -49,7 +55,7 @@ class ArticleviewController extends ControllerBase
                 // </editor-fold>
                 $o->save();
                 $this->flash->success("Information saved !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
             $this->response->redirect($this->request->getHTTPReferer());
@@ -70,7 +76,7 @@ class ArticleviewController extends ControllerBase
             try {
                 $o->delete();
                 $this->flash->success("Delete Successfully !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }

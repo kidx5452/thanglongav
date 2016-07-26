@@ -11,8 +11,9 @@ class ArticleController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "article";
-        $this->view->activesidebar = "/article/index";
+        $this->view->activesidebar = $config->application->baseUri."article/index";
         parent::initialize();
     }
 

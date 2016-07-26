@@ -1,12 +1,21 @@
 <?php
 namespace Webapp\Backend\Controllers;
 
+use Webapp\Backend\Models\Albummedia;
+use Webapp\Backend\Models\AlbummediaDetail;
+use Webapp\Backend\Models\AlbumTag;
+use Webapp\Backend\Models\Classobj;
+use Webapp\Backend\Models\User;
+use Webapp\Backend\Utility\Helper;
+use Webapp\Backend\Utility\SimpleImage;
+
 class AlbummediaController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "albummedia";
-        $this->view->activesidebar = "/albummedia/index";
+        $this->view->activesidebar = $config->application->baseUri."albummedia/index";
         parent::initialize();
     }
 
@@ -63,7 +72,7 @@ class AlbummediaController extends ControllerBase
                             $vid = new AlbummediaDetail();
                             $vid->map_object($datapost);
                             $vid->save();
-                        } catch (Exception $e) {
+                        } catch (\Exception $e) {
                             $this->flash->error($e->getMessage());
                         }
                     }
@@ -74,7 +83,7 @@ class AlbummediaController extends ControllerBase
 
                 }
 
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -154,7 +163,7 @@ class AlbummediaController extends ControllerBase
                     $etag->save();
                 }
                 $this->flash->success($this->view->labelkey['general.lbl_process_success']);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -184,7 +193,7 @@ class AlbummediaController extends ControllerBase
         if ($at) {
             try {
                 $at->delete();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -194,7 +203,7 @@ class AlbummediaController extends ControllerBase
         if ($ad) {
             try {
                 $ad->delete();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -204,7 +213,7 @@ class AlbummediaController extends ControllerBase
             try {
                 $o->delete();
                 $this->flash->success($this->view->labelkey['general.lbl_process_success']);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
@@ -237,7 +246,7 @@ class AlbummediaController extends ControllerBase
             $o->map_object($datapost);
             $o->save();
             echo json_encode(array('error'=>$error,'data'=>$datapost));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $error = 1;
             $msg = $e->getMessage();
             echo json_encode(array('error'=>$error,'msg'=>$msg));
@@ -264,7 +273,7 @@ class AlbummediaController extends ControllerBase
                     unlink($this->config->media->dir.$o->avatar);
                     $o->delete();
                 }
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $error = 1;
                 $msg = $e->getMessage();
             }
@@ -309,7 +318,7 @@ class AlbummediaController extends ControllerBase
                 $photo = new AlbummediaDetail();
                 $photo->map_object($datapost);
                 $photo->save();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $error = 1;
                 $msg = $e->getMessage();
             }

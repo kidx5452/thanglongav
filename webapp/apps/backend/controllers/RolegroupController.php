@@ -1,11 +1,16 @@
 <?php
 namespace Webapp\Backend\Controllers;
+use Webapp\Backend\Models\Rolegroup;
+use Webapp\Backend\Utility\Helper;
+use Webapp\Backend\Utility\Module;
+
 class RolegroupController extends ControllerBase
 {
     public function initialize()
     {
+        global $config;
         $this->modulename = "rolegroup";
-        $this->view->activesidebar = "/rolegroup/index";
+        $this->view->activesidebar = $config->application->baseUri."rolegroup/index";
         parent::initialize();
     }
     public function indexAction()
@@ -60,7 +65,7 @@ class RolegroupController extends ControllerBase
                 // </editor-fold>
                 $o->save();
                 $this->flash->success("Information saved !");
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
 
@@ -93,7 +98,7 @@ class RolegroupController extends ControllerBase
             try {
                 $o->delete();
                 $this->flash->success($this->view->labelkey['general.lbl_process_success']);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
         }
