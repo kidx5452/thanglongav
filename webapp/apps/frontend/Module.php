@@ -11,6 +11,8 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Url;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Cache\Frontend\Data as FrontendData;
+use Phalcon\Cache\Backend\Memcache as BackendMemcache;
 
 class Module implements ModuleDefinitionInterface
 {
@@ -26,9 +28,10 @@ class Module implements ModuleDefinitionInterface
 
         $loader->registerNamespaces(array(
             'Webapp\Frontend\Controllers' => __DIR__ . '/controllers/',
-            'Webapp\Frontend\Models' => __DIR__ . '/models/',
+            'Webapp\Frontend\Models'      => __DIR__ . '/models/',
+            //'Webapp\Frontend\Locale'      => __DIR__ . '/config/i18n/',
+            'Webapp\Frontend\Utility'      => __DIR__ . '/library/',
         ));
-
         $loader->register();
     }
 
@@ -142,7 +145,30 @@ class Module implements ModuleDefinitionInterface
         $di->setShared('modelsMetadata', function () {
             return new MetaDataAdapter();
         });
+        // Set the models cache service
+        $di->set('modelsCache', function () {
 
+            try {// Cache data for one day by default
+                $frontCache = new FrontendData(
+                    array(
+                        "lifetime" => 86400
+                    )
+                );
+
+                // Memcached connection settings
+                $cache = new BackendMemcache(
+                    $frontCache,
+                    array(
+                        "host" => "localhost",
+                        "port" => "11211"
+                    )
+                );
+
+                return $cache;
+            } catch (\Exception $e) {
+            }
+            return ;
+        });
         /**
          * Register the session flash service with the Twitter Bootstrap classes
          */

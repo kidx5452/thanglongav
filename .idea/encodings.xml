@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/library/Helper.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/library/Module.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/AlbumTag.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Albummedia.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/AlbummediaDetail.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Article.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/ArticleView.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/AtCat.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/BaseModel.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Category.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/CategoryView.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Classobj.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/ConfigNotecircle.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Event.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/EventTag.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Language.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/NotifyPupil.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/ReportPupil.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpAttitude.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpGeneral.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpMinitest.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpOraltest.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpPresentation.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpQuarter.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpRequestLog.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/RpSkilltest.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Timetable.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/Tuition.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/User.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/webapp/apps/frontend/models/UserPosition.php" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/webapp/apps/frontend/views/index.volt" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

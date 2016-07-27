@@ -150,6 +150,17 @@ class Module
             else return 0;
         }
     }
+
+    public static function category_type(){
+        $cat[] = array("key"=>"news","name"=>"Tin tức");
+        $cat[] = array("key"=>"about","name"=>"Giới thiệu");
+        $cat[] = array("key"=>"copyright","name"=>"Bản quyền");
+        $cat[] = array("key"=>"learning","name"=>"Đào tạo");
+        $cat[] = array("key"=>"product","name"=>"Sản phẩm");
+        $cat[] = array("key"=>"contact","name"=>"Liên hệ");
+        $cat[] = array("key"=>"network","name"=>"Network");
+        return $cat;
+    }
 }
 
 ?>

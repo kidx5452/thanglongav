@@ -1,7 +1,7 @@
 <?php
 namespace Webapp\Backend\Controllers;
-use Webapp\Backend\Models\RpRequestLog;
 use Webapp\Backend\Models\User;
+use Webapp\Backend\Utility\Helper;
 
 class IndexController extends ControllerBase
 {
@@ -20,16 +20,7 @@ class IndexController extends ControllerBase
             $memcache_obj->flush();
         }
 
-        // Delete expired log
-        $deletetime = time()-($this->config->application->rpRequestLogLimit*86400);
-        $rrl = RpRequestLog::find("datecreate<=$deletetime");
-        if ($rrl) {
-            try {
-                $rrl->delete();
-            } catch (\Exception $e) {
-                $this->flash->error($e->getMessage());
-            }
-        }
+
     }
 
     public function changelanguageAction()

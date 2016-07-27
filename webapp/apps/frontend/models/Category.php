@@ -1,5 +1,7 @@
 <?php
-namespace Webapp\Backend\Models;
+namespace Webapp\Frontend\Models;
+use Webapp\Frontend\Utility\Helper;
+
 class Category extends BaseModel
 {
 
@@ -98,7 +100,6 @@ class Category extends BaseModel
      * @var string
      */
     public $avatar;
-
     /**
      *
      * @var int
@@ -134,14 +135,20 @@ class Category extends BaseModel
      */
     public function initialize()
     {
-        $this->hasMany('id', '\Webapp\Backend\Models\AtCat', 'catid', array('alias' => 'AtCat'));
-        $this->hasMany('id', '\Webapp\Backend\Models\Category', 'parentid', array('alias' => 'Category'));
-        $this->belongsTo('usercreate', '\Webapp\Backend\Models\User', 'id', array('alias' => 'User'));
-        $this->belongsTo('parentid', '\Webapp\Backend\Models\Category', 'id', array('alias' => 'Category'));
-        $this->belongsTo('pintop_atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'PinArticle'));
-        $this->belongsTo('left_atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'LeftArticle'));
-        $this->belongsTo('center_atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'CenterArticle'));
-        $this->belongsTo('right_atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'RightArticle'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\AtCat', 'catid', array('alias' => 'AtCat'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\Category', 'parentid', array('alias' => 'Category'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\CategoryView', 'catid', array('alias' => 'CategoryView'));
+        $this->belongsTo('usercreate', 'Webapp\Frontend\Models\User', 'id', array('alias' => 'User'));
+        $this->belongsTo('parentid', 'Webapp\Frontend\Models\Category', 'id', array('alias' => 'Category'));
+        $this->belongsTo('pintop_atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'PinArticle'));
+        $this->belongsTo('left_atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'LeftArticle'));
+        $this->belongsTo('center_atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'CenterArticle'));
+        $this->belongsTo('right_atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'RightArticle'));
+    }
+
+    public function getlink(){
+        return '/'.Helper::Cleanurl(Helper::khongdau($this->name)).'_c'.$this->id.'.html';
+        //return "/category/view?id=".$this->id;
     }
 
     /**
@@ -175,11 +182,5 @@ class Category extends BaseModel
     {
         return parent::findFirst($parameters);
     }
-    public static function position(){
-        return array(
-                array('key'=>'topmenu','name'=>'Top Menu'),
-                array('key'=>'leftcatmenu','name'=>'Left Menu (Category)'),
-                array('key'=>'menublockhome','name'=>'Menu Block (Home)')
-        );
-    }
+
 }

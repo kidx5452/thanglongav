@@ -3,11 +3,10 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="685d7ea9-eeea-451f-8236-9bf2b0e83cf7" name="demo.thanglongav.vn" url="http://demo.thanglongav.vn">
-        <fileTransfer host="demo.thanglongav.vn" port="22" accessType="SFTP" username="root">
+        <fileTransfer host="demo.thanglongav.vn" port="22" accessType="SFTP" password="dfcddfdadfc9dfeadf99df9cdf9f" username="root">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

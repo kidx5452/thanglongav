@@ -5,6 +5,7 @@ use Webapp\Backend\Models\AtCat;
 use Webapp\Backend\Models\Category;
 use Webapp\Backend\Models\CategoryView;
 use Webapp\Backend\Utility\Helper;
+use Webapp\Backend\Utility\Module;
 
 class CategoryController extends ControllerBase
 {
@@ -18,43 +19,28 @@ class CategoryController extends ControllerBase
     public function indexAction()
     {
         if (!$this->checkpermission("category_view")) return false;
-        $langlist = Culture::lang();
-        $this->view->langlist = $langlist;
-        $l = $this->request->getQuery('lang', 'string') ? $this->request->getQuery('lang', 'string') : $langlist['vi_VN']['key'];
-        $cattree = self::getMenu(0, $l);
+        $cattype = $this->request->get("cattype");
+        if(empty($cattype)) $cattype = "news";
+        $listcategory = Module::category_type();
+        $this->view->listCategoryType = $listcategory;
+        $cattree = self::getMenu(0, $cattype);
         $this->view->cattree = $cattree;
+        $this->view->viewvar = array("cattype"=>$cattype);
     }
 
-    public function getMenu($parentid, $lang)
+
+    public function getMenu($parentid, $type)
     {
-        $listdata = Category::find(array("conditions" => "parentid=$parentid AND lang='$lang'"));
+        $listdata = Category::find(array("conditions" => "parentid=$parentid AND type='$type'"));
         $listdata = $listdata->toArray();
         if (!$listdata) return null;
         $html = "<ul>";
         foreach ($listdata as $row) {
-            $status = $row['status'] == 1 ? '' : '<span class="label label-danger">H</span>';
-            switch($row['type']){
-                default:
-                    $typeStr = 'S';
-                    $titleStr = 'Single Page Category';
-                    break;
-                case 'list':
-                    $typeStr = 'L';
-                    $titleStr = 'List Article Category';
-                    break;
-                case 'photo':
-                    $typeStr = 'P';
-                    $titleStr = 'Photo Category';
-                    break;
-                case 'video':
-                    $typeStr = 'V';
-                    $titleStr = 'Video Category';
-                    break;
-            }
-            $type = '<span class="label label-success" title="'.$titleStr.'">'.$typeStr.'</span>';
-            $layout = $row['layout'] == '2col' ? '<span class="label label-info" title="2 columns">2</span>' : '<span class="label label-info" title="3 columns">3</span>';
-            $html .= "<li id='{$row['id']}'><a href=\"#\">{$row['name']} &nbsp;&nbsp; $type $layout $status</a>";
-            $html .= self::getMenu($row['id'],$lang);
+            $html .= "<li id='{$row['id']}'><a class='text-danger' href=''>{$row['name']}</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+            $html .= "<a href='form?cattype=$type&id={$row['id']}'>Sửa</a> | ";
+            $html .= "<a href='delete?id={$row['id']}'>Xóa</a> | ";
+            $html .= "<a href='form?cattype=$type&parentid={$row['id']}'>Thêm con</a>";
+            $html .= self::getMenu($row['id'],$type);
             $html .= "</li>";
         }
         $html .= "</ul>";
@@ -64,6 +50,9 @@ class CategoryController extends ControllerBase
     public function formAction()
     {
         $id = $this->request->get("id");
+        $cattype = $this->request->get("cattype");
+        if(empty($cattype)) $cattype = "news";
+
         if(!empty($id)){
             if (!$this->checkpermission("category_update")) return false;
         }
@@ -72,11 +61,8 @@ class CategoryController extends ControllerBase
         }
         if ($this->request->isPost()) {
             try {
-                $datapost = Helper::post_to_array("name,caption,descriptions,status,parentid,lang,type,layout,content,rightcolcontent,pintop_atid,left_atid,center_atid,right_atid,cover_video");
-                if($datapost['pintop_atid']<=0) $datapost['pintop_atid'] = 0;
-                if($datapost['left_atid']<=0) $datapost['left_atid'] = 0;
-                if($datapost['center_atid']<=0) $datapost['center_atid'] = 0;
-                if($datapost['right_atid']<=0) $datapost['right_atid'] = 0;
+                $datapost = Helper::post_to_array("name,caption,descriptions,status,lang,type,layout,content,rightcolcontent,view_type,pintop_atid,left_atid,center_atid,right_atid,cover_video");
+                $datapost['type'] = $cattype;
                 $coverphoto = $this->post_file_key("coverphoto");
                 if ($coverphoto != null) $datapost['coverphoto'] = $coverphoto;
                 $avatar = $this->post_file_key("avatar");
@@ -86,6 +72,9 @@ class CategoryController extends ControllerBase
                     $o = Category::findFirst($id);
                     if ($o->name == $datapost['name']) unset($datapost['name']);
                 } else { //insert
+                    $parentid = $this->request->get("parentid");
+                    if(empty($parentid)) $parentid = 0;
+                    $datapost['parentid'] = $parentid;
                     $o = new Category();
                     $o->id = time();
                     $datapost['usercreate'] = $this->userinfo['id'];
@@ -98,7 +87,8 @@ class CategoryController extends ControllerBase
                 $o->map_object($datapost);
                 $o->save();
                 $this->flash->success($this->view->labelkey['general.lbl_process_success']);
-                if($_POST['backurl']) header('Location: ' . $_POST['backurl']);
+                $this->response->redirect("category/index?cattype=$cattype");
+                return;
             } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
@@ -107,8 +97,7 @@ class CategoryController extends ControllerBase
         $this->view->object = $o;
         $listdata = Category::find();
         $this->view->listdata = $listdata;
-        $this->view->langlist = Culture::lang();
-        $this->view->backurl = strlen($this->request->getHTTPReferer())<=0? $this->view->activesidebar: $this->request->getHTTPReferer();
+        $this->view->viewvar = array("cattype"=>$cattype);
     }
 
     public function deleteAction()
@@ -155,7 +144,7 @@ class CategoryController extends ControllerBase
         $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_NO_RENDER);
         header("Content-Type:application/json;charset=utf-8");
         $q = $this->request->getQuery("q", "string");
-        $query = $q ? "parentid = 0 AND name LIKE '%" . $q . "%'" : '';
+        $query = $q ? "name LIKE '%" . $q . "%'" : '';
         $listdata = Category::find(array(
             "conditions" => $query,
             "order" => "id asc",

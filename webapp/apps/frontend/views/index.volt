@@ -65,7 +65,8 @@
                             Menu</button>
                     </div><!-- /.navbar-header -->
                     <div class="navbar-collapse collapse">
-                        <ul id="main-menu" class="sm sm-clean">
+                        {{ topmenu }}
+                        {#<ul id="main-menu" class="sm sm-clean">
                             <li><a href="#home">Trang chủ</a></li>
                             <li><a href="#">Giới thiệu</a>
                                 <ul>
@@ -80,7 +81,8 @@
                             <li><a href="#">Đào tạo</a></li>
                             <li><a href="#">Sản phẩm đặt hàng</a></li>
                             <li><a data-scroll href="#tlav-contact">Liên hệ</a></li>
-                        </ul><!-- /.nav -->
+                        </ul>#}
+                        <!-- /.nav -->
                     </div><!-- /.navbar-collapse -->
 
                 </div>

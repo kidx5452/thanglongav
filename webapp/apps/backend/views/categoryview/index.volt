@@ -16,16 +16,6 @@
                 </header>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label class="col-md-2 control-label">{{ labelkey['general.lbl_lang'] }}</label>
-                        <div class="col-md-8">
-                            <select id="langSelect" name="" class="form-control">
-                                {% for item in langlist %}
-                                    <option {{ _GET['lang']==item['key']?'selected':'' }} pos-url="?pos={{ _GET['pos'] ? _GET['pos']:catpos[0]['key'] }}&lang={{ item['key'] }}" value="{{ item['key'] }}">{{ item['name'] }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-md-2 control-label">{{ labelkey['categoryview.lbl_position'] }}</label>
                         <div class="col-md-8">
                             <select id="positionSelect" name="" class="form-control">
@@ -65,9 +55,9 @@
 </div>
 
 <!--typeahead-->
-<script type="text/javascript" src="/js/bootstrap3-typeahead.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap3-typeahead.js"></script>
 <!--nestable -->
-<script src="/js/nestable/jquery.nestable.js"></script>
+<script src="/backend_res/js/nestable/jquery.nestable.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {

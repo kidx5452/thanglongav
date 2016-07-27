@@ -17,15 +17,12 @@ class CategoryviewController extends ControllerBase
     {
         if (!$this->checkpermission("categoryview_view")) return false;
         $poslist = Category::position();
-        $langlist = Culture::lang();
         $this->view->catpos = $poslist;
-        $this->view->langlist = $langlist;
         $q = $this->request->getQuery("pos", "string") ? $this->request->getQuery("pos", "string") : $poslist[0]['key'];
-        $l = $this->request->getQuery('lang','string') ? $this->request->getQuery('lang','string') : $langlist['vi_VN']['key'];
         if ($this->request->isPost()) {
             try {
                 $selectedCat = array_values(array_unique($this->request->getPost('cat')));
-                    $query = "poskey='$q' AND lang='$l'";
+                    $query = "poskey='$q'";
                     $o = CategoryView::find(array('conditions' => $query));
                     if ($o) {
                         try {
@@ -40,7 +37,6 @@ class CategoryviewController extends ControllerBase
                             $datapost['catid'] = (int) $sCat;
                             $datapost['poskey'] = $q;
                             $datapost['sorts'] = $i;
-                            $datapost['lang'] = $l;
                             $o = new CategoryView();
                             $o->map_object($datapost);
                             $o->save();
@@ -55,7 +51,7 @@ class CategoryviewController extends ControllerBase
             }
         }
 
-        $query = "poskey = '$q' AND lang='$l'";
+        $query = "poskey = '$q'";
         $listdata = CategoryView::find(
             array(
                 'conditions' => $query
