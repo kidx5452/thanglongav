@@ -1,5 +1,7 @@
 <?php
 namespace Webapp\Backend\Models;
+use Webapp\Backend\Utility\Helper;
+
 class Category extends BaseModel
 {
 
@@ -143,7 +145,10 @@ class Category extends BaseModel
         $this->belongsTo('center_atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'CenterArticle'));
         $this->belongsTo('right_atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'RightArticle'));
     }
-
+    public function getlink(){
+        return '/'.Helper::Cleanurl(Helper::khongdau($this->name)).'_c'.$this->id.'.html';
+        //return "/category/view?id=".$this->id;
+    }
     /**
      * Returns table name mapped in the model.
      *

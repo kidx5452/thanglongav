@@ -47,6 +47,12 @@ class Module
             array("name" => "Sửa", "key" => "update"),
             array("name" => "Xóa", "key" => "delete")
         ));
+        $permission["menuview"] = array("name" => "Menu", "child" => array(
+            array("name" => "Xem danh sách", "key" => "view"),
+            array("name" => "Thêm mới", "key" => "add"),
+            array("name" => "Sửa", "key" => "update"),
+            array("name" => "Xóa", "key" => "delete")
+        ));
         $permission["articleview"] = array("name" => "Hiển thị bài viết", "child" => array(
                 array("name" => "Xem danh sách", "key" => "view"),
                 array("name" => "Thêm mới", "key" => "add"),
@@ -128,6 +134,7 @@ class Module
         ));
 
         $sidebar[] = array("name" => $langarr['sidebar.displayconfig'], "icon" => "zmdi zmdi-settings-square", "key" => "categoryview,articleview,config", "controller" => "javascript:void(0)", "child" => array(
+            array("name" => "Menu", "key" => "menuview", "controller" => "$baseuri/menu/index"),
             array("name" => $langarr['sidebar.category'], "key" => "categoryview", "controller" => "$baseuri/categoryview/index"),
             array("name" => $langarr['sidebar.article'], "key" => "articleview", "controller" => "$baseuri/articleview/index"),
             array("name" => $langarr['sidebar.imageconfig'], "key" => "config", "controller" => "$baseuri/config/image"),
@@ -160,6 +167,11 @@ class Module
         $cat[] = array("key"=>"contact","name"=>"Liên hệ");
         $cat[] = array("key"=>"network","name"=>"Network");
         return $cat;
+    }
+    public static function menu_type(){
+        $menu[] = array("key"=>"category","name"=>"Category");
+        $menu[] = array("key"=>"url","name"=>"URL");
+        return $menu;
     }
 }
 

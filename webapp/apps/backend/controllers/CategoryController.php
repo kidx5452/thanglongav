@@ -32,15 +32,15 @@ class CategoryController extends ControllerBase
     public function getMenu($parentid, $type)
     {
         $listdata = Category::find(array("conditions" => "parentid=$parentid AND type='$type'"));
-        $listdata = $listdata->toArray();
         if (!$listdata) return null;
         $html = "<ul>";
         foreach ($listdata as $row) {
-            $html .= "<li id='{$row['id']}'><a class='text-danger' href=''>{$row['name']}</a>&nbsp;&nbsp;&nbsp;&nbsp;";
-            $html .= "<a href='form?cattype=$type&id={$row['id']}'>Sửa</a> | ";
-            $html .= "<a href='delete?id={$row['id']}'>Xóa</a> | ";
-            $html .= "<a href='form?cattype=$type&parentid={$row['id']}'>Thêm con</a>";
-            $html .= self::getMenu($row['id'],$type);
+            $html .= "<li id='{$row->id}'><a class='text-danger' href=''>{$row->name}</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+            $html .= "<a href='form?cattype=$type&id={$row->id}'>Sửa</a> | ";
+            $html .= "<a href='delete?id={$row->id}'>Xóa</a> | ";
+            $html .= "<a href='form?cattype=$type&parentid={$row->id}'>Thêm con</a> | ";
+            $html .= "<a href='{$row->getlink()}' target='_blank'>Xem trên client</a>";
+            $html .= self::getMenu($row->id,$type);
             $html .= "</li>";
         }
         $html .= "</ul>";
