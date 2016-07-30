@@ -36,7 +36,7 @@
                 $html .= "<a href='form?cattype=$type&id={$row->id}'>Sửa</a> | ";
                 $html .= "<a href='delete?id={$row->id}'>Xóa</a> | ";
                 $html .= "<a href='form?cattype=$type&parentid={$row->id}'>Thêm con</a> | ";
-                $html .= "<a href='{$row->getlink()}' target='_blank'>Xem trên client</a>";
+                $html .= "<a href='{$row->getlink()}' target='_blank'>Xem trên client</a> | ";
                 $html .= "<a href='{$row->get_article_link()}' target='_blank'>Xem bài viết</a>";
                 $html .= self::getMenu($row->id, $type);
                 $html .= "</li>";
@@ -149,7 +149,6 @@
             if (!$this->checkpermission("category_view")) return;
             $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_NO_RENDER);
             header("Content-Type:application/json;charset=utf-8");
-            $lang = $this->request->getPost("lang", "string");
             $atid = $this->request->getPost("atid");
             $selectedArr = [];
             if ($atid > 0) {
@@ -161,22 +160,21 @@
                 $selectedArr = [];
                 foreach ($selectedCat as $sCat) array_push($selectedArr, $sCat['catid']);
             }
-            $menudata = self::getAjaxCat(0, $lang, $selectedArr);
+            $menudata = self::getAjaxCat(0, $selectedArr);
             echo json_encode($menudata);
-
             return;
         }
 
-        public function getAjaxCat($parentid, $lang, $selectedArr) {
+        public function getAjaxCat($parentid, $selectedArr) {
             if (!$this->checkpermission("category_view")) return;
-            $listdata = Category::find(["conditions" => "parentid=$parentid AND lang='$lang'"]);
+            $listdata = Category::find(["conditions" => "parentid=$parentid"]);
             $listdata = $listdata->toArray();
-            if (!$listdata) return null;
+            if (!count($listdata)) return null;
             $html = "<ul>";
             foreach ($listdata as $row) {
                 $checked = in_array($row['id'], $selectedArr) ? 'checked' : '';
                 $html .= "<li id='{$row['id']}'><label><input {$checked} type='checkbox' value='{$row['id']}' name='category[]' /> {$row['name']}</label>";
-                $html .= self::getAjaxCat($row['id'], $lang, $selectedArr);
+                $html .= self::getAjaxCat($row['id'], $selectedArr);
                 $html .= "</li>";
             }
             $html .= "</ul>";

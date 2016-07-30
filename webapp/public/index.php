@@ -2,7 +2,7 @@
 
 use Phalcon\Mvc\Application;
 ini_set("display_errors",1);
-error_reporting(1);
+error_reporting(0);
 
 define('APP_PATH', realpath('..'));
 

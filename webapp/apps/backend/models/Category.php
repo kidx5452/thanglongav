@@ -151,7 +151,7 @@ class Category extends BaseModel
     }
 
     public function get_article_link(){
-        return '/'.Helper::Cleanurl(Helper::khongdau($this->name)).'_c'.$this->id.'.html';
+        return "/backend/article/index?catid={$this->id}";
         //return "/category/view?id=".$this->id;
     }
 
