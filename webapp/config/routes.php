@@ -25,6 +25,12 @@ foreach ($application->getModules() as $key => $module) {
         'action' => 2,
         'params' => 3
     ));
+    //Category
+    $router->add('/{slug}_c{id:[0-9]+}.html', array(
+        'controller' => 'category',
+        'action' => 'index',
+        'id' => 1, // ([0-9]+)
+    ));
 }
 
 $di->set("router", $router);

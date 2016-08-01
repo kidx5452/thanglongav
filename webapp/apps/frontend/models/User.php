@@ -189,13 +189,11 @@ class User extends BaseModel
      */
     public function initialize()
     {
-        $this->hasMany('id', 'Category', 'usercreate', array('alias' => 'Category'));
-        $this->hasMany('id', 'Classobj', 'usercreate', array('alias' => 'Classobj'));
-        $this->hasMany('id', 'ReportPupil', 'userid', array('alias' => 'ReportPupil'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\Category', 'usercreate', array('alias' => 'Category'));
         $this->hasMany('id', 'Rolegroup', 'usercreate', array('alias' => 'Rolegroup'));
-        $this->hasMany('id', 'User', 'usercreate', array('alias' => 'User'));
-        $this->hasMany('id', 'UserRole', 'userid', array('alias' => 'UserRole'));
-        $this->belongsTo('usercreate', 'User', 'id', array('alias' => 'User'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\User', 'usercreate', array('alias' => 'User'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\UserRole', 'userid', array('alias' => 'UserRole'));
+        $this->belongsTo('usercreate', 'Webapp\Frontend\Models\User', 'id', array('alias' => 'User'));
     }
 
     /**

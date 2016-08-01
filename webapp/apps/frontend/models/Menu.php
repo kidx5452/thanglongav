@@ -1,6 +1,6 @@
 <?php
 namespace Webapp\Frontend\Models;
-class CategoryView extends BaseModel
+class Menu extends BaseModel
 {
 
     /**
@@ -11,36 +11,39 @@ class CategoryView extends BaseModel
 
     /**
      *
-     * @var integer
+     * @var string
      */
-    public $catid;
+    public $name;
 
     /**
      *
      * @var string
      */
-    public $poskey;
+    public $type;
+
+    /**
+     *
+     * @var string
+     */
+    public $objid;
+
+    /**
+     *
+     * @var integer
+     */
+    public $parentid;
+
+    /**
+     *
+     * @var integer
+     */
+    public $status;
 
     /**
      *
      * @var integer
      */
     public $sorts;
-
-    /**
-     *
-     * @var string
-     */
-    public $lang;
-
-    /**
-     * Initialize method for model.
-     */
-    public function initialize()
-    {
-        $this->belongsTo('catid', 'Webapp\Frontend\Models\Category', 'id', array('alias' => 'Category'));
-    }
-
     /**
      * Returns table name mapped in the model.
      *
@@ -48,14 +51,14 @@ class CategoryView extends BaseModel
      */
     public function getSource()
     {
-        return 'category_view';
+        return 'menu';
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return CategoryView[]
+     * @return Menu[]
      */
     public static function find($parameters = null)
     {
@@ -66,7 +69,7 @@ class CategoryView extends BaseModel
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return CategoryView
+     * @return Menu
      */
     public static function findFirst($parameters = null)
     {

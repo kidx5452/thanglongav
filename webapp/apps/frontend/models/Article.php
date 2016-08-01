@@ -1,5 +1,7 @@
 <?php
 namespace Webapp\Frontend\Models;
+use Webapp\Frontend\Utility\Helper;
+
 class Article extends BaseModel
 {
 
@@ -74,7 +76,7 @@ class Article extends BaseModel
      */
     public function initialize()
     {
-        $this->hasMany('id', 'AtCat', 'atid', array('alias' => 'AtCat'));
+        $this->hasMany('id', 'Webapp\Frontend\Models\AtCat', 'atid', array('alias' => 'AtCat'));
     }
 
     public function getlink(){

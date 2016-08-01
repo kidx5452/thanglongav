@@ -163,8 +163,8 @@ class Module
         $cat[] = array("key"=>"about","name"=>"Giới thiệu");
         $cat[] = array("key"=>"copyright","name"=>"Bản quyền");
         $cat[] = array("key"=>"learning","name"=>"Đào tạo");
+        $cat[] = array("key"=>"creator","name"=>"Sản xuất - phát hành");
         $cat[] = array("key"=>"product","name"=>"Sản phẩm");
-        $cat[] = array("key"=>"contact","name"=>"Liên hệ");
         $cat[] = array("key"=>"network","name"=>"Network");
         return $cat;
     }

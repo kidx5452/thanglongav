@@ -3,6 +3,7 @@
 namespace Webapp\Frontend\Controllers;
 
 use Phalcon\Mvc\Controller;
+use Webapp\Frontend\Models\Menu;
 use Webapp\Frontend\Utility\Helper;
 use Webapp\Frontend\Models\Category;
 use Webapp\Frontend\Models\CategoryView;
@@ -40,25 +41,14 @@ class ControllerBase extends Controller
         return $content;
     }
 
-    public function getPosMenu($parentid, $poskey,$level)
+    public function getPosMenu($parentid, $poskey)
     {
-        if($parentid>0) {
-            $listdata = Category::find(array("conditions" => "status=1 AND parentid=$parentid"));
-        }
-        else {
-            $listCatView = CategoryView::find("poskey='$poskey'");
-            $listCatView = $listCatView->toArray();
-            $catStr = '';
-            foreach($listCatView as $catview) $catStr .= $catview['catid'].',';
-            $catStr = substr($catStr,0,-1);
-            $listdata = Category::find(array('conditions'=>"status=1 AND parentid=$parentid AND id IN($catStr)"));
-        }
+        $listdata = Menu::find(array("conditions" => "status=1 AND parentid=$parentid"));
         if (!$listdata->toArray()) return null;
 
         $html = $parentid > 0 ? '<ul>' : '<ul id="main-menu" class="sm sm-clean">';
-        if($parentid==0) $html .= "<li><a href='/'>Trang chủ</a></li>";
         foreach ($listdata as $row) {
-            $html .= "<li><a href='{$row->getlink()}'>{$row->name}</a>";
+            $html .= "<li><a href='{$row->objid}'>{$row->name}</a>";
             $html .= self::getPosMenu($row->id,$poskey);
             $html .= "</li>";
         }

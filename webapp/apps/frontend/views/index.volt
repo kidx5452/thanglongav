@@ -4,9 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Thăng Long Av</title>
+    <title>{{ header['title'] }}</title>
+    <meta name="description" content="{{ header['desc'] }}"/>
+    <meta name="keyword" content="{{ header['keyword'] }}"/>
+    <meta name="robots" content="index, follow"/>
+    <meta content='wsi.vn' name='author'/>
+    <meta content='index, follow' name='GOOGLEBOT'/>
+    <meta content='index, follow' name='yahooBOT'/>
+    <meta name="Slurp" content="index,follow"/>
+    <meta name="revisit-after" content="1 days"/>
+    <meta name="MSNBot" content="index,follow"/>
+    <meta http-equiv="Content-Language" content="vi"/>
+    <meta name="revisit-after" content="1 days"/>
+    <meta property="og:title" content="{{ header['title'] }}"/>
+    <meta property="og:url" content="{{ header['canonial'] }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="{{ header['image'] }}"/>
+    <meta property="og:site_name" content="thanglongav.vn"/>
+    <meta property="og:description" content="{{ header['desc'] }}"/>
+    <link rel="shortcut icon" href="http://wsi.vn/web/images/icons/fav-icon.png">
+    <link rel="canonical" href="{{ header['canonial'] }}"/>
+    <link rel="alternate feed" type="application/rss+xml" title="Sitemap" href="http://thanglongav.vn/sitemap"/>
+
     <link rel="stylesheet" href="/frontend_res/skins/style.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/responsive.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/font-awesome.css" type="text/css" media="all">

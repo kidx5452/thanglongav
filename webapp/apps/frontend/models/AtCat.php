@@ -26,8 +26,8 @@ class AtCat extends BaseModel
      */
     public function initialize()
     {
-        $this->belongsTo('atid', 'Article', 'id', array('alias' => 'Article'));
-        $this->belongsTo('catid', 'Category', 'id', array('alias' => 'Category'));
+        $this->belongsTo('atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'Article'));
+        $this->belongsTo('catid', 'Webapp\Frontend\Models\Category', 'id', array('alias' => 'Category'));
     }
 
     /**

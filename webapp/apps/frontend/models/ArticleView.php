@@ -37,7 +37,7 @@ class ArticleView extends BaseModel
      */
     public function initialize()
     {
-        $this->belongsTo('atid', 'Article', 'id', array('alias' => 'Article'));
+        $this->belongsTo('atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'Article'));
     }
 
     /**

@@ -32,9 +32,8 @@ class AlbumTag extends BaseModel
      */
     public function initialize()
     {
-        $this->belongsTo('albumid', 'Albummedia', 'id', array('alias' => 'Albummedia'));
-        $this->belongsTo('classid', 'Classobj', 'id', array('alias' => 'Classobj'));
-        $this->belongsTo('userid', 'User', 'id', array('alias' => 'User'));
+        $this->belongsTo('albumid', 'Webapp\Frontend\Models\Albummedia', 'id', array('alias' => 'Albummedia'));
+        $this->belongsTo('userid', 'Webapp\Frontend\Models\User', 'id', array('alias' => 'User'));
     }
 
     /**
