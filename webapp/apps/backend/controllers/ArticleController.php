@@ -12,7 +12,7 @@
         public function initialize() {
             global $config;
             $this->modulename = "article";
-            $this->view->activesidebar = $config->application->baseUri . "article/index";
+            $this->view->activesidebar = $config->application->baseUri . "category/index";
             parent::initialize();
         }
 
@@ -24,36 +24,25 @@
             $cp = ($p - 1) * $limit;
             $catid = $this->request->get("catid");
             $query = "1=1 ";
-            if (isset($catid)) {
-                $query .= " and catid = '{$catid}'";
-                $list_atcat = AtCat::find([
-                    'conditions' => $query,
-                    'order' => 'id desc',
-                    'limit' => $limit,
-                    'offset' => $cp
-                ]);
-                if (count($list_atcat)) {
-                    $list_atcat = $list_atcat->toArray();
-                    $list_id = implode("," , array_column($list_atcat, 'atid'));
-                    $listdata = Article::find([
-                        "conditions" => "id in ($list_id)",
-                        "order" => "id DESC"
-                    ]);
-                }
-                $this->view->painginfo = Helper::paginginfo(AtCat::count($query), $limit, $p);
-            } else {
-                $q = $this->request->getQuery("q", "string");
-                $status = $this->request->get("status");
-                if ($q) $query .= " AND name LIKE '%" . $q . "%'";
-                if (isset($status) && $status < 2) $query .= " AND status = $status";
+            if (!isset($catid)) $this->response->redirect('/category/index');
+
+            $query .= " and catid = '{$catid}'";
+            $list_atcat = AtCat::find([
+                'conditions' => $query,
+                'order' => 'id desc',
+                'limit' => $limit,
+                'offset' => $cp
+            ]);
+            if (count($list_atcat)) {
+                $list_atcat = $list_atcat->toArray();
+                $list_id = implode(",", array_column($list_atcat, 'atid'));
                 $listdata = Article::find([
-                    "conditions" => $query,
-                    "order" => "id DESC",
-                    "limit" => $limit,
-                    "offset" => $cp
+                    "conditions" => "id in ($list_id)",
+                    "order" => "id DESC"
                 ]);
-                $this->view->painginfo = Helper::paginginfo(Article::count($query), $limit, $p);
             }
+            $this->view->painginfo = Helper::paginginfo(AtCat::count($query), $limit, $p);
+
             $this->view->q = $q;
             $this->view->langlist = Culture::lang();
             $this->view->listdata = $listdata;

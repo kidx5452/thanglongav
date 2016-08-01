@@ -124,7 +124,7 @@ class Module
         global $config;
         $baseuri = rtrim($config->application->baseUri,"/");
         $sidebar[] = array("name" => $langarr['sidebar.home'], "icon" => "zmdi zmdi-home", "key" => "loginsystem", "controller" => "$baseuri/index/index");
-        $sidebar[] = array("name" => $langarr['sidebar.article'], "icon" => "zmdi zmdi-file-text", "key" => "news", "controller" => "$baseuri/article/index");
+//        $sidebar[] = array("name" => $langarr['sidebar.article'], "icon" => "zmdi zmdi-file-text", "key" => "news", "controller" => "$baseuri/article/index");
         $sidebar[] = array("name" => $langarr['sidebar.album'], "icon" => "zmdi zmdi-collection-image", "key" => "albummedia", "controller" => "$baseuri/albummedia/index");
         $sidebar[] = array("name" => $langarr['sidebar.category'], "icon" => "zmdi zmdi-folder", "key" => "category", "controller" => "$baseuri/category/index");
 
