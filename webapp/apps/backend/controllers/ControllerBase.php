@@ -128,7 +128,7 @@
             if (in_array($fileParts, ['srt'])) {
                 $folder_name = '/sub/';
             }
-            if (!file_exists($target_dir . $folder . $folder_name)) mkdir($target_dir . $folder . $folder_name, 0777, true);
+            if (!file_exists($target_dir . $folder . $folder_name)) var_dump(mkdir($target_dir . $folder . $folder_name, 0777, true));
             $target_file = $folder . $folder_name . basename(md5(strtotime("now") . uniqid() . rand(0, 9999)) . "_" . $this->removeTitle($_FILES["$key"]["name"]));
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             if (file_exists($target_file)) return null;

@@ -8,6 +8,13 @@ class Helper
         return md5(md5($pass));
     }
 
+    public static function offset($page, $limit)
+    {
+        if ($page <= 1) $page = 1;
+        $offset = ($page - 1) * $limit;
+        return $offset;
+    }
+
     public static function post_to_array($param)
     {
         $param = explode(",", $param);

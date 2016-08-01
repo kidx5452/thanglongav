@@ -116,6 +116,12 @@ class Module
                 array("name" => "Sửa", "key" => "update"),
                 array("name" => "Xóa", "key" => "delete")
         ));
+        $permission["partner"] = array("name" => "Đối tác", "child" => array(
+            array("name" => "Xem danh sách", "key" => "view"),
+            array("name" => "Thêm mới", "key" => "add"),
+            array("name" => "Sửa", "key" => "update"),
+            array("name" => "Xóa", "key" => "delete")
+        ));
         return $permission;
     }
 
@@ -139,6 +145,7 @@ class Module
             array("name" => $langarr['sidebar.article'], "key" => "articleview", "controller" => "$baseuri/articleview/index"),
             array("name" => $langarr['sidebar.imageconfig'], "key" => "config", "controller" => "$baseuri/config/image"),
         ));
+        $sidebar[] = array("name" => $langarr['sidebar.partner'], "icon" => "zmdi zmdi-walk zmdi-hc-fw", "key" => "partner", "controller" => "$baseuri/partner/index");
         return $sidebar;
     }
 
