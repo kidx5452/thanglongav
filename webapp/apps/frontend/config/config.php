@@ -19,11 +19,11 @@ return new \Phalcon\Config(array(
         'vendorDir'       => __DIR__ . '/../vendor/',
         'cultureDir'       => __DIR__ . '/../config/i18n/',
         'baseUri'        => '/backend',
-        'baseUrl' => 'http://wsi.vn/',
+        'baseUrl' => 'http://demo.thanglongav.vn/',
         'rpRequestLogLimit' => 90 // so ngay luu tru bao cao truy cap
     ),
     "media"=>array(
         'dir'=>'/home/wsi.vn/public_html/public/',
-        "host"=>"http://wsi.vn/"
+        "host"=>"http://demo.thanglongav.vn/"
     )
 ));

@@ -49,6 +49,7 @@
         }
 
         public function formAction() {
+            $catid = $this->request->get("catid");
             $id = $this->request->get("id");
             if (!empty($id)) {
                 if (!$this->checkpermission("news_update")) return false;
@@ -112,8 +113,10 @@
                     $this->flash->error($e->getMessage());
                 }
             }
+            $catobject = Category::findFirst($catid);
             if (!empty($id)) $o = Article::findFirst($id);
-            $this->view->object = $o;
+            $htmlx = $this->render_template("article/form",$catobject->type,$o);
+            $this->view->htmlx = $htmlx;
             $this->view->langlist = Culture::lang();
             $this->view->backurl = strlen($this->request->getHTTPReferer()) <= 0 ? $this->view->activesidebar : $this->request->getHTTPReferer();
         }

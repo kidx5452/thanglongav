@@ -172,11 +172,11 @@
                     </div>
                     <div class="drawer-content">
                         <div class="form-contact">
-                            <form action="" method="post" class="tlav-form">
-                                <p class="col-md-12 field"><input type="text" name="" value="" size="40" placeholder="Họ tên"></p>
-                                <p class="col-md-12 field"><input type="text" name="" value="" size="40" placeholder="Số điện thoại"></p>
-                                <p class="col-md-12 field"><input type="text" name="" value="" size="40" placeholder="Email"></p>
-                                <p class="col-md-12 field"><textarea name="your-message" cols="40" rows="10" placeholder="Nội dung"></textarea></p>
+                            <form action="{{ url("index/contact") }}" method="post" class="tlav-form">
+                                <p class="col-md-12 field"><input type="text" name="name" value="" size="40" placeholder="Họ tên"></p>
+                                <p class="col-md-12 field"><input type="text" name="phone" value="" size="40" placeholder="Số điện thoại"></p>
+                                <p class="col-md-12 field"><input type="text" name="email" value="" size="40" placeholder="Email"></p>
+                                <p class="col-md-12 field"><textarea name="contents"  cols="40" rows="10" placeholder="Nội dung"></textarea></p>
                                 <p class="col-md-12 submit-wrap ">
                                     <input type="submit" value="Gửi thông tin" class="btn-gui btn-primary">
                                 </p>

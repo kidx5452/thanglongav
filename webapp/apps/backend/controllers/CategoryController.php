@@ -150,7 +150,9 @@
             $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_NO_RENDER);
             header("Content-Type:application/json;charset=utf-8");
             $atid = $this->request->getPost("atid");
-            $selectedArr = [];
+            $catid = $this->request->getPost("catid");
+            $catobj = Category::findFirst($catid);
+            $selectedArr = [$catid];
             if ($atid > 0) {
                 $selectedCat = AtCat::find([
                     'conditions' => "atid=$atid",
@@ -160,21 +162,21 @@
                 $selectedArr = [];
                 foreach ($selectedCat as $sCat) array_push($selectedArr, $sCat['catid']);
             }
-            $menudata = self::getAjaxCat(0, $selectedArr);
+            $menudata = self::getAjaxCat(0, $selectedArr,$catobj->type);
             echo json_encode($menudata);
             return;
         }
 
-        public function getAjaxCat($parentid, $selectedArr) {
+        public function getAjaxCat($parentid, $selectedArr,$type) {
             if (!$this->checkpermission("category_view")) return;
-            $listdata = Category::find(["conditions" => "parentid=$parentid"]);
+            $listdata = Category::find(["conditions" => "parentid=$parentid and type='$type'"]);
             $listdata = $listdata->toArray();
             if (!count($listdata)) return null;
             $html = "<ul>";
             foreach ($listdata as $row) {
                 $checked = in_array($row['id'], $selectedArr) ? 'checked' : '';
                 $html .= "<li id='{$row['id']}'><label><input {$checked} type='checkbox' value='{$row['id']}' name='category[]' /> {$row['name']}</label>";
-                $html .= self::getAjaxCat($row['id'], $selectedArr);
+                $html .= self::getAjaxCat($row['id'], $selectedArr,$type);
                 $html .= "</li>";
             }
             $html .= "</ul>";

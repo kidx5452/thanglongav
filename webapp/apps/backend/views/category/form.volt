@@ -72,8 +72,8 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group" id="rightcontent-area" style="display: {{ _POST['layout']=='3col' or object.layout=='3col' ?'block':'none' }}">
-                        <label class="col-md-2 control-label">{{ labelkey['category.lbl_rightcolcontent'] }}</label>
+                    <div class="form-group" id="rightcontent-area">
+                        <label class="col-md-2 control-label">Content</label>
                         <div class="col-md-8"><textarea name="rightcolcontent" class="form-control form_editor">{{ object.rightcolcontent }}</textarea></div>
                     </div>
                 </div>
