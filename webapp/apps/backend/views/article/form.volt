@@ -23,16 +23,6 @@
                                 <div id="tab1" class="tab-pane active">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">{{ labelkey['article.lbl_lang'] }}</label>
-                                            <div class="col-md-8">
-                                                <select class="form-control" name="lang" id="lang" onchange="getAjaxCat();">
-                                                    {% for item in langlist %}
-                                                        <option {{ _POST['lang']==item['key'] or object.lang==item['key'] ?'selected':'' }} value="{{ item['key'] }}">{{ item['name'] }}</option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
                                             <label class="col-md-2 control-label">{{ labelkey['article.lbl_name'] }}</label>
                                             <div class="col-md-8"><input type="text" name="name" value="{{ object.name }}" class="form-control"></div>
                                         </div>
@@ -124,7 +114,6 @@
     function getAjaxCat() {
         $.post("{{ url('/category/getajaxmenu') }}",
                 {
-                    lang: $('#lang').val(),
                     atid: {{ _GET['id'] ? _GET['id'] : 0  }}
                 },
                 function (data, status) {
