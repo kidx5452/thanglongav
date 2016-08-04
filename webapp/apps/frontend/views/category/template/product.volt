@@ -13,7 +13,7 @@
                 </li>
                 {% endfor %}
             </ul>
-            <div class="view-ct"><a href="#">Xem thêm</a></div>
+            <div class="view-ct"><a href="/category/detail/{{ item['id'] }}">Xem thêm</a></div>
         </div>
     </div><!--End-->
     {% endfor %}

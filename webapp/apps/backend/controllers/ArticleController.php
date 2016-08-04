@@ -117,6 +117,7 @@
             if (!empty($id)) $o = Article::findFirst($id);
             $htmlx = $this->render_template("article/form",$catobject->type,$o);
             $this->view->htmlx = $htmlx;
+            $this->view->typesArticle = $this->articleType();
             $this->view->langlist = Culture::lang();
             $this->view->backurl = strlen($this->request->getHTTPReferer()) <= 0 ? $this->view->activesidebar : $this->request->getHTTPReferer();
         }
@@ -166,6 +167,13 @@
             echo json_encode($listdata->toArray());
 
             return;
+        }
+
+        public function articleType(){
+            $type[] = array("name"=>"Bản quyền Audio","key"=>"audio");
+            $type[] = array("name"=>"Bản quyền Video","key"=>"video");
+            $type[] = array("name"=>"Trao đổi bản quyền","key"=>"copyright");
+            return $type;
         }
     }
 

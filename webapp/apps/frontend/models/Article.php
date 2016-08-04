@@ -72,6 +72,12 @@ class Article extends BaseModel
     public $coverphoto;
 
     /**
+     *
+     * @var string
+     */
+    public $types;
+
+    /**
      * Initialize method for model.
      */
     public function initialize()

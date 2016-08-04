@@ -76,6 +76,12 @@ class Article extends BaseModel
     public $cover_video;
 
     /**
+     *
+     * @var string
+     */
+    public $types;
+
+    /**
      * Initialize method for model.
      */
     public function initialize()

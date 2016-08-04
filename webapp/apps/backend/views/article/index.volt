@@ -47,8 +47,8 @@
                             <td><strong>{{ item.status==1?'<span class="label label-success">Show</span>':'<span class="label label-inverse">Hide</span>' }}</strong></td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a class="btn btn-default" title="{{ labelkey['general.btn_edit'] }}" href="form?id={{ item.id }}"><i class="zmdi zmdi-edit"></i></a>
-                                    <a class="btn btn-default" onclick="return confirm('Are you sure ?');" title="{{ labelkey['general.btn_delete'] }}" href="delete?id={{ item.id }}"><i class="zmdi zmdi-delete"></i></a>
+                                    <a class="btn btn-default" title="{{ labelkey['general.btn_edit'] }}" href="form?id={{ item.id }}&catid={{ _GET['catid'] }}"><i class="zmdi zmdi-edit"></i></a>
+                                    <a class="btn btn-default" onclick="return confirm('Are you sure ?');" title="{{ labelkey['general.btn_delete'] }}" href="delete?id={{ item.id }}&catid={{ _GET['catid'] }}"><i class="zmdi zmdi-delete"></i></a>
                                 </div>
                             </td>
                         </tr>
