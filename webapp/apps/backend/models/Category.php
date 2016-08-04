@@ -136,6 +136,7 @@ class Category extends BaseModel
      */
     public function initialize()
     {
+        $this->useDynamicUpdate(true);
         $this->hasMany('id', '\Webapp\Backend\Models\AtCat', 'catid', array('alias' => 'AtCat'));
         $this->hasMany('id', '\Webapp\Backend\Models\Category', 'parentid', array('alias' => 'Category'));
         $this->belongsTo('usercreate', '\Webapp\Backend\Models\User', 'id', array('alias' => 'User'));

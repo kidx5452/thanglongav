@@ -59,7 +59,7 @@
             }
             if ($this->request->isPost()) {
                 try {
-                    $datapost = Helper::post_to_array("name,captions,descriptions,status,content,lang,cover_video");
+                    $datapost = Helper::post_to_array("name,captions,descriptions,status,content,lang,cover_video,types");
                     $avatar = $this->post_file_key("avatar");
                     if ($avatar != null) $datapost['avatar'] = $avatar;
                     $coveravatar = $this->post_file_key("coveravatar");
@@ -115,9 +115,11 @@
             }
             $catobject = Category::findFirst($catid);
             if (!empty($id)) $o = Article::findFirst($id);
+            if(!is_array($o) && !empty($o)) $o = $o->toArray();
+            $o['typesArticle'] = $this->articleType();
             $htmlx = $this->render_template("article/form",$catobject->type,$o);
             $this->view->htmlx = $htmlx;
-            $this->view->typesArticle = $this->articleType();
+
             $this->view->langlist = Culture::lang();
             $this->view->backurl = strlen($this->request->getHTTPReferer()) <= 0 ? $this->view->activesidebar : $this->request->getHTTPReferer();
         }

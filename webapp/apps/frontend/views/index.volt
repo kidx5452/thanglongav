@@ -55,8 +55,8 @@
     <div id="hometop" class="header-top">
         <div class="container">
             <ul class="link-top">
-                <li><a href="#">THANGLONGAV.VN</a></li>
-                <li><a href="#">DAOTAO.THANGLONGAV.VN</a></li>
+                <li><a href="/">THANGLONGAV.VN</a></li>
+                <li><a href="/">DAOTAO.THANGLONGAV.VN</a></li>
             </ul>
             <div class="col-share">
                 <ul class="social-network social-circle">
@@ -73,7 +73,7 @@
 
             <div class="col-md-2 col-sm-12 col-xs-12">
                 <h1 class="logo-tlav">
-                    <a href="#"><img src="/frontend_res/skins/images/logo.png" alt=""></a>
+                    <a href="/"><img src="/frontend_res/skins/images/logo.png" alt=""></a>
                 </h1> <!-- /.logo -->
             </div>
 
@@ -86,23 +86,6 @@
                     </div><!-- /.navbar-header -->
                     <div class="navbar-collapse collapse">
                         {{ topmenu }}
-                        {#<ul id="main-menu" class="sm sm-clean">
-                            <li><a href="#home">Trang chủ</a></li>
-                            <li><a href="#">Giới thiệu</a>
-                                <ul>
-                                    <div class="boder-mn">
-                                        <li><a href="#">Về chúng tôi</a></li>
-                                        <li><a href="#">Lịch sử hình thành</a></li>
-                                        <li><a href="#">Ban giám đốc</a></li>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li><a href="#">Bản quyền</a></li>
-                            <li><a href="#">Đào tạo</a></li>
-                            <li><a href="#">Sản phẩm đặt hàng</a></li>
-                            <li><a data-scroll href="#tlav-contact">Liên hệ</a></li>
-                        </ul>#}
-                        <!-- /.nav -->
                     </div><!-- /.navbar-collapse -->
 
                 </div>

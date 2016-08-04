@@ -20,16 +20,6 @@
                                 <div id="tab1" class="tab-pane active">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Type</label>
-                                            <div class="col-md-8">
-                                                <select name="types" id="" class="form-control">
-                                                    {% for item in object['typesArticle'] %}
-                                                        <option {{ item['key']==object['types']?"selected":"" }} value="{{ item['key'] }}">{{ item['name'] }}</option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
                                             <label class="col-md-2 control-label">{{ labelkey['article.lbl_name'] }}</label>
                                             <div class="col-md-8"><input type="text" name="name" value="{{ object['name'] }}" class="form-control"></div>
                                         </div>

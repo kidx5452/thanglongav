@@ -87,8 +87,9 @@ $(document).ready(function(){
 
 // tlav to scroll menu
     $(window).scroll(function () {
-
-        //Display or hide scroll to top button 
+		var topMenuHeight = 58;
+		var scrollItems=null;
+        //Display or hide scroll to top button
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
         } else {
@@ -105,10 +106,14 @@ $(document).ready(function(){
         var fromTop = $(this).scrollTop() + topMenuHeight + 10;
 
         // Get id of current scroll item
-        var cur = scrollItems.map(function () {
-            if ($(this).offset().top < fromTop)
-                return this;
-        });
+		/*var cur;
+		if(scrollItems!=null){
+			cur = scrollItems.map(function () {
+				if ($(this).offset().top < fromTop)
+					return this;
+			});
+		}
+
 
         // Get the id of the current element
         cur = cur[cur.length - 1];
@@ -120,7 +125,7 @@ $(document).ready(function(){
             menuItems
             .parent().removeClass("active")
             .end().filter("[href=#" + id + "]").parent().addClass("active");
-        }
+        }*/
     });
 
     /*

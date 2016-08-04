@@ -82,6 +82,7 @@ class Article extends BaseModel
      */
     public function initialize()
     {
+        $this->useDynamicUpdate(true);
         $this->hasMany('id', 'Webapp\Frontend\Models\AtCat', 'atid', array('alias' => 'AtCat'));
     }
 

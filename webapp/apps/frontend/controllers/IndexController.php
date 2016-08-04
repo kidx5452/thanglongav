@@ -31,6 +31,7 @@ class IndexController extends ControllerBase
         );
     }
     private function swithCategoryView($category){
+        $category->articles = 1;
         return $this->render_template("index/template",$category->type,$category);
     }
 

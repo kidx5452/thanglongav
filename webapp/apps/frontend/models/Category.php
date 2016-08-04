@@ -135,6 +135,7 @@ class Category extends BaseModel
      */
     public function initialize()
     {
+        $this->useDynamicUpdate(true);
         $this->hasMany('id', 'Webapp\Frontend\Models\AtCat', 'catid', array('alias' => 'AtCat'));
         $this->hasMany('id', 'Webapp\Frontend\Models\Category', 'parentid', array('alias' => 'Category'));
         $this->hasMany('id', 'Webapp\Frontend\Models\CategoryView', 'catid', array('alias' => 'CategoryView'));

@@ -1,5 +1,6 @@
 <section id="box-youtube-net">
     <div class="container">
+        {{ object.articles }}
         <div class="heading-box"><h2>Thanglong Av</h2><span>{{ object.name }}</span></div>
         <div class="slide-videos owl-theme">
             <article class="module-videos">

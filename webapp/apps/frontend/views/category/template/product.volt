@@ -5,7 +5,7 @@
         <h3>{{ item['name'] }}</h3>
         <div class="container">
             <ul class="list-ground">
-                {% for article in item['listarticle'] %}
+                {% for article in item['listArticles'] %}
                 <li class="col-md-4 col-sm-4 col-xs-12">
                     <h4><a href="#">{{ article['name'] }}</a></h4>
                     <figure class="videos-icon"><a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/1t24XAntNCY"><img src="/{{ article['avatar'] }}" alt=""/></a></figure>
