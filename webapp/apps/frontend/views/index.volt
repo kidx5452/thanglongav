@@ -5,33 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ header['title'] }}</title>
-    <meta name="description" content="{{ header['desc'] }}"/>
-    <meta name="keyword" content="{{ header['keyword'] }}"/>
-    <meta name="robots" content="index, follow"/>
-    <meta content='wsi.vn' name='author'/>
-    <meta content='index, follow' name='GOOGLEBOT'/>
-    <meta content='index, follow' name='yahooBOT'/>
-    <meta name="Slurp" content="index,follow"/>
-    <meta name="revisit-after" content="1 days"/>
-    <meta name="MSNBot" content="index,follow"/>
-    <meta http-equiv="Content-Language" content="vi"/>
-    <meta name="revisit-after" content="1 days"/>
-    <meta property="og:title" content="{{ header['title'] }}"/>
-    <meta property="og:url" content="{{ header['canonial'] }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="{{ header['image'] }}"/>
-    <meta property="og:site_name" content="thanglongav.vn"/>
-    <meta property="og:description" content="{{ header['desc'] }}"/>
+    <meta name="description" content="{{ header['desc'] }}" />
+    <meta name="keyword" content="{{ header['keyword'] }}" />
+    <meta name="robots" content="index, follow" />
+    <meta content='wsi.vn' name='author' />
+    <meta content='index, follow' name='GOOGLEBOT' />
+    <meta content='index, follow' name='yahooBOT' />
+    <meta name="Slurp" content="index,follow" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="MSNBot" content="index,follow" />
+    <meta http-equiv="Content-Language" content="vi" />
+    <meta name="revisit-after" content="1 days" />
+    <meta property="og:title" content="{{ header['title'] }}" />
+    <meta property="og:url" content="{{ header['canonial'] }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ header['image'] }}" />
+    <meta property="og:site_name" content="thanglongav.vn" />
+    <meta property="og:description" content="{{ header['desc'] }}" />
     <link rel="shortcut icon" href="http://wsi.vn/web/images/icons/fav-icon.png">
-    <link rel="canonical" href="{{ header['canonial'] }}"/>
-    <link rel="alternate feed" type="application/rss+xml" title="Sitemap" href="http://thanglongav.vn/sitemap"/>
+    <link rel="canonical" href="{{ header['canonial'] }}" />
+    <link rel="alternate feed" type="application/rss+xml" title="Sitemap" href="http://thanglongav.vn/sitemap" />
 
     <link rel="stylesheet" href="/frontend_res/skins/style.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/responsive.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/font-awesome.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/carousel.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/frontend_res/skins/menu-clean.css" type="text/css"  media="all">
-    <link rel="Stylesheet" href="/frontend_res/skins/animate.css" type="text/css"  media="all">
+    <link rel="stylesheet" href="/frontend_res/skins/menu-clean.css" type="text/css" media="all">
+    <link rel="Stylesheet" href="/frontend_res/skins/animate.css" type="text/css" media="all">
 
 
     <script type="text/javascript" src="/frontend_res/js/jquery.min.js"></script>
@@ -73,7 +73,7 @@
 
             <div class="col-md-2 col-sm-12 col-xs-12">
                 <h1 class="logo-tlav">
-                    <a href="#"><img src="/frontend_res/skins/images/logo.png" alt=""  ></a>
+                    <a href="#"><img src="/frontend_res/skins/images/logo.png" alt=""></a>
                 </h1> <!-- /.logo -->
             </div>
 
@@ -81,7 +81,8 @@
                 <div class="row">
                     <div class="navbar-header">
                         <button class="btn responsive-menu pull-left collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            Menu</button>
+                            Menu
+                        </button>
                     </div><!-- /.navbar-header -->
                     <div class="navbar-collapse collapse">
                         {{ topmenu }}
@@ -122,7 +123,7 @@
                 <a href="#"><img src="/frontend_res/images/img_slide/slide1.jpg" alt=""></a>
                 <div class="container">
                     <div class="carousel-caption">
-                        <div class="animated fadeIn wow animated" data-wow-delay="0.5s" >
+                        <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
                             <h1>Hotline <strong>0988 666 888 </strong></h1>
                         </div>
                     </div><!--/.content -->
@@ -132,7 +133,7 @@
                 <a href="#"><img src="/frontend_res/images/img_slide/slide2.jpg" alt=""></a>
                 <div class="container">
                     <div class="carousel-caption">
-                        <div class="animated fadeIn wow animated" data-wow-delay="0.5s" >
+                        <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
                             <h1>Hotline <strong>0988 666 888 </strong></h1>
                         </div>
                     </div><!--/.content -->
@@ -151,11 +152,10 @@
 <section id="partner">
     <div class="container">
         <div id="slide-partner" class="slide-kh">
-            <div><a href="" title=""><img src="/frontend_res/images/doitac/dt1.jpg" alt=""></a></div>
-            <div><a href="" title=""><img src="/frontend_res/images/doitac/dt2.jpg" alt=""></a></div>
-            <div><a href="" title=""><img src="/frontend_res/images/doitac/dt3.jpg" alt=""></a></div>
-            <div><a href="" title=""><img src="/frontend_res/images/doitac/dt4.jpg" alt=""></a></div>
-            <div><a href="" title=""><img src="/frontend_res/images/doitac/dt2.jpg" alt=""></a></div>
+
+            {% for item in list_partner %}
+                <div><a href="" title="{{ item.name }}"><img src="{{ media.host~item.avatar }}" alt=""></a></div>
+            {% endfor %}
         </div><!-- End slide-partner -->
     </div>
 </section><!--End-partner-->
@@ -176,7 +176,7 @@
                                 <p class="col-md-12 field"><input type="text" name="name" value="" size="40" placeholder="Họ tên"></p>
                                 <p class="col-md-12 field"><input type="text" name="phone" value="" size="40" placeholder="Số điện thoại"></p>
                                 <p class="col-md-12 field"><input type="text" name="email" value="" size="40" placeholder="Email"></p>
-                                <p class="col-md-12 field"><textarea name="contents"  cols="40" rows="10" placeholder="Nội dung"></textarea></p>
+                                <p class="col-md-12 field"><textarea name="contents" cols="40" rows="10" placeholder="Nội dung"></textarea></p>
                                 <p class="col-md-12 submit-wrap ">
                                     <input type="submit" value="Gửi thông tin" class="btn-gui btn-primary">
                                 </p>
