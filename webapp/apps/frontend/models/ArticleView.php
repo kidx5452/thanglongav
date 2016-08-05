@@ -32,6 +32,13 @@ class ArticleView extends BaseModel
      * @var integer
      */
     public $captions;
+
+    /**
+     *
+     * @var String
+     */
+    public $url;
+
     /**
      * Initialize method for model.
      */

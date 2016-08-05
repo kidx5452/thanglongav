@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <a href="{{ backurl }}" class="btn btn-sm btn-success addon-btn m-b-10"><i class="zmdi zmdi-arrow-left"></i> {{ labelkey['general.lbl_back'] }}</a>
+        <a href="index" class="btn btn-sm btn-success addon-btn m-b-10"><i class="zmdi zmdi-arrow-left"></i> {{ labelkey['general.lbl_back'] }}</a>
         <section class="panel-">
             <div class="panel-body no-pad">
                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -18,7 +18,7 @@
                             <div class="tab-content">
                                 <div id="tab1" class="tab-pane active">
                                     <div class="col-md-12">
-                                        <div class="form-group">
+                                        {#<div class="form-group">
                                             <label class="col-md-2 control-label">{{ labelkey['general.lbl_lang'] }}</label>
 
                                             <div class="col-md-8">
@@ -28,7 +28,7 @@
                                                     {% endfor %}
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div>#}
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">{{ labelkey['articleview.lbl_position'] }}</label>
 
@@ -41,10 +41,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">{{ labelkey['articleview.lbl_chooseart'] }}</label>
+                                            <label class="col-md-2 control-label">URL</label>
                                             <div class="col-md-8">
-                                                <input type="text" id="name" value="{{ object.name }}" autocomplete="off" data-provide="typeahead" class="form-control">
-                                                <input type="hidden" name="atid" id="atid" value="{{ object.atid }}">
+                                                <input type="text" id="name" value="{{ object.url }}" name="url" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -121,7 +121,7 @@
             <!--toggle button end-->
 
             <!--mega menu start-->
-            <div id="navbar-collapse-1" class="navbar-collapse collapse yamm mega-menu">
+            {#<div id="navbar-collapse-1" class="navbar-collapse collapse yamm mega-menu">
                 <ul class="nav navbar-nav">
                     <!-- Classic dropdown -->
                     <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle"> {{ language_active['name'] }} <b class=" fa fa-angle-down"></b></a>
@@ -135,7 +135,7 @@
                     </li>
 
                 </ul>
-            </div>
+            </div>#}
             <!--mega menu end-->
             <div class="notification-wrap">
                 <!--right notification start-->

@@ -319,7 +319,7 @@ ul.link-top a:hover{ color:#8895E3}
     padding: 40px 0 0 0;
     clear: both;
 }
-.box-tlav-villa .bg-while-bot { background:#fff; height:38px; margin-top:10px; overflow:hidden}
+.bg-while-bot { background:#fff; height:38px; margin-top:10px; overflow:hidden}
 .box-tlav-villa h2 { color:#fff; font-size:26px; font-weight:300; padding-bottom:5px; margin:0}
 .box-tlav-villa span { position:relative; font-size:45px; font-weight:400; color:#fff ; text-transform:uppercase}
 .box-tlav-villa span:before {
@@ -764,8 +764,8 @@ ul li:hover .tlav-featured-hover i {
 #tlav-daotao .box-uuthe .block-ud figure { margin-bottom:20px;}
 #tlav-daotao .box-uuthe .block-ud figure img { width:auto}
 #tlav-daotao .box-uuthe .block-ud h3{ font-size:18px; font-weight:400; padding:0 40px; color:#2f3c99; margin-bottom:40px; }
-#tlav-daotao .box-uuthe ul.list-dot { clear:both; margin-top:30px;}
-#tlav-daotao .box-uuthe ul.list-dot li { background:url(images/arrow2.png) no-repeat 0 0px; display:block; padding-left:33px;
+#tlav-daotao .box-uuthe div.list-dot ul { clear:both; margin-top:30px;}
+#tlav-daotao .box-uuthe div.list-dot ul li { background:url(images/arrow2.png) no-repeat 0 0px; display:block; padding-left:33px;
     padding-bottom:20px; line-height:1.3em; font-size:16px; font-weight:400; color:#333}
 
 #tlav-daotao .box-dtts {  padding: 50px 0 0 0; background:#30377d; clear:both; overflow:hidden

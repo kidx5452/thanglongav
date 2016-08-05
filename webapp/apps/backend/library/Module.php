@@ -14,12 +14,12 @@ class Module
             array("name" => "Cập nhật trạng thái bài viết", "key" => "updatestatus"),
             array("name" => "Xóa", "key" => "delete")
         ));
-        $permission["albummedia"] = array("name" => "Album", "child" => array(
+        /*$permission["albummedia"] = array("name" => "Album", "child" => array(
             array("name" => "Xem danh sách", "key" => "view"),
             array("name" => "Thêm mới", "key" => "add"),
             array("name" => "Sửa", "key" => "update"),
             array("name" => "Xóa", "key" => "delete")
-        ));
+        ));*/
         $permission["category"] = array("name" => "Chuyên mục", "child" => array(
             array("name" => "Xem danh sách", "key" => "view"),
             array("name" => "Thêm mới", "key" => "add"),
@@ -65,57 +65,7 @@ class Module
             array("name" => "Sửa", "key" => "update"),
             array("name" => "Xóa", "key" => "delete")
         ));
-        $permission["classobj"] = array("name" => "Quản lý lớp học", "child" => array(
-            array("name" => "Xem danh sách", "key" => "view"),
-            array("name" => "Thêm mới", "key" => "add"),
-            array("name" => "Sửa", "key" => "update"),
-            array("name" => "Xóa", "key" => "delete")
-        ));
-        $permission["pupil"] = array("name" => "Quản lý học sinh", "child" => array(
-            array("name" => "Xem danh sách", "key" => "view"),
-            array("name" => "Thêm mới", "key" => "add"),
-            array("name" => "Sửa", "key" => "update"),
-            array("name" => "Xóa", "key" => "delete"),
-            array("name" => "Quản lý báo cáo", "key" => "report"),
-            array("name" => "Cập nhật trạng thái báo cáo", "key" => "reportupdatestatus"),
-            array("name" => "Quản lý thông báo", "key" => "notify"),
-        ));
-        $permission["teacher"] = array("name" => "Quản lý giáo viên", "child" => array(
-            array("name" => "Xem danh sách", "key" => "view"),
-            array("name" => "Thêm mới", "key" => "add"),
-            array("name" => "Sửa", "key" => "update"),
-            array("name" => "Xóa", "key" => "delete")
-        ));
-        $permission["rprequestlog"] = array("name" => "Xem lịch sử truy cập", "child" => array(
-            array("name" => "Xem danh sách", "key" => "view"),
-            array("name" => "Thêm mới", "key" => "add"),
-            array("name" => "Sửa", "key" => "update"),
-            array("name" => "Xóa", "key" => "delete")
-        ));
-        $permission["timetable"] = array("name" => "Thời khóa biểu", "child" => array(
-            array("name" => "Xem danh sách", "key" => "view"),
-            array("name" => "Thêm mới", "key" => "add"),
-            array("name" => "Sửa", "key" => "update"),
-            array("name" => "Xóa", "key" => "delete")
-        ));
-        $permission["tuition"] = array("name" => "Học phí", "child" => array(
-            array("name" => "Xem danh sách", "key" => "view"),
-            array("name" => "Thêm mới", "key" => "add"),
-            array("name" => "Sửa", "key" => "update"),
-            array("name" => "Xóa", "key" => "delete")
-        ));
-        $permission["event"] = array("name" => "Sự kiện", "child" => array(
-                array("name" => "Xem danh sách", "key" => "view"),
-                array("name" => "Thêm mới", "key" => "add"),
-                array("name" => "Sửa", "key" => "update"),
-                array("name" => "Xóa", "key" => "delete")
-        ));
-        $permission["userpostition"] = array("name" => "Quá trình học tập", "child" => array(
-                array("name" => "Xem danh sách", "key" => "view"),
-                array("name" => "Thêm mới", "key" => "add"),
-                array("name" => "Sửa", "key" => "update"),
-                array("name" => "Xóa", "key" => "delete")
-        ));
+
         $permission["partner"] = array("name" => "Đối tác", "child" => array(
             array("name" => "Xem danh sách", "key" => "view"),
             array("name" => "Thêm mới", "key" => "add"),
@@ -130,8 +80,8 @@ class Module
         global $config;
         $baseuri = rtrim($config->application->baseUri,"/");
         $sidebar[] = array("name" => $langarr['sidebar.home'], "icon" => "zmdi zmdi-home", "key" => "loginsystem", "controller" => "$baseuri/index/index");
-//        $sidebar[] = array("name" => $langarr['sidebar.article'], "icon" => "zmdi zmdi-file-text", "key" => "news", "controller" => "$baseuri/article/index");
-        $sidebar[] = array("name" => $langarr['sidebar.album'], "icon" => "zmdi zmdi-collection-image", "key" => "albummedia", "controller" => "$baseuri/albummedia/index");
+        //$sidebar[] = array("name" => $langarr['sidebar.article'], "icon" => "zmdi zmdi-file-text", "key" => "news", "controller" => "$baseuri/article/index");
+        //$sidebar[] = array("name" => $langarr['sidebar.album'], "icon" => "zmdi zmdi-collection-image", "key" => "albummedia", "controller" => "$baseuri/albummedia/index");
         $sidebar[] = array("name" => $langarr['sidebar.category'], "icon" => "zmdi zmdi-folder", "key" => "category", "controller" => "$baseuri/category/index");
 
         $sidebar[] = array("name" => $langarr['sidebar.account'], "icon" => "zmdi zmdi-account", "key" => "user,rolegroup", "controller" => "javascript:void(0)", "child" => array(
@@ -143,7 +93,7 @@ class Module
             array("name" => "Menu", "key" => "menuview", "controller" => "$baseuri/menu/index"),
             array("name" => $langarr['sidebar.category'], "key" => "categoryview", "controller" => "$baseuri/categoryview/index"),
             array("name" => $langarr['sidebar.article'], "key" => "articleview", "controller" => "$baseuri/articleview/index"),
-            array("name" => $langarr['sidebar.imageconfig'], "key" => "config", "controller" => "$baseuri/config/image"),
+            //array("name" => $langarr['sidebar.imageconfig'], "key" => "config", "controller" => "$baseuri/config/image"),
         ));
         $sidebar[] = array("name" => $langarr['sidebar.partner'], "icon" => "zmdi zmdi-walk zmdi-hc-fw", "key" => "partner", "controller" => "$baseuri/partner/index");
         return $sidebar;

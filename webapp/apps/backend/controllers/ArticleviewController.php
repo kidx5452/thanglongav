@@ -18,7 +18,7 @@ class ArticleviewController extends ControllerBase
     {
         if (!$this->checkpermission("articleview_view")) return false;
         $lang = $this->langkey;
-        $query = "lang='$lang'";
+        $query = "1=1";
         $listdata = ArticleView::find(
             array(
                 'conditions' => $query,
@@ -42,7 +42,7 @@ class ArticleviewController extends ControllerBase
         }
         if ($this->request->isPost()) {
             try {
-                $datapost = Helper::post_to_array("lang,poskey,atid,sorts,captions");
+                $datapost = Helper::post_to_array("lang,poskey,atid,sorts,captions,url");
                 $avatar = $this->post_file_key("avatar");
                 if($avatar!=null) $datapost['avatar'] = $avatar;
                 // <editor-fold desc="Validate">

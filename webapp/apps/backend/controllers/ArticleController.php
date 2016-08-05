@@ -23,6 +23,7 @@
             if ($p <= 1) $p = 1;
             $cp = ($p - 1) * $limit;
             $catid = $this->request->get("catid");
+            $catobj = Category::findFirst($catid);
             $query = "1=1 ";
             if (!isset($catid)) $this->response->redirect('/category/index');
 
@@ -44,6 +45,7 @@
             $this->view->painginfo = Helper::paginginfo(AtCat::count($query), $limit, $p);
 
             $this->view->q = $q;
+            $this->view->catobject = $catobj;
             $this->view->langlist = Culture::lang();
             $this->view->listdata = $listdata;
         }
@@ -116,7 +118,7 @@
             $catobject = Category::findFirst($catid);
             if (!empty($id)) $o = Article::findFirst($id);
             if(!is_array($o) && !empty($o)) $o = $o->toArray();
-            $o['typesArticle'] = $this->articleType();
+            $o['typesArticle'] = $this->articleType($catobject->type);
             $htmlx = $this->render_template("article/form",$catobject->type,$o);
             $this->view->htmlx = $htmlx;
 
@@ -171,10 +173,21 @@
             return;
         }
 
-        public function articleType(){
-            $type[] = array("name"=>"Bản quyền Audio","key"=>"audio");
-            $type[] = array("name"=>"Bản quyền Video","key"=>"video");
-            $type[] = array("name"=>"Trao đổi bản quyền","key"=>"copyright");
+        public function articleType($t){
+            if($t=="copyright"){
+                $type[] = array("name"=>"Bản quyền Audio","key"=>"audio");
+                $type[] = array("name"=>"Bản quyền Video","key"=>"video");
+                $type[] = array("name"=>"Trao đổi bản quyền","key"=>"copyright");
+            }
+            else if($t=="learning"){
+                $type[] = array("name"=>"Tin bài","key"=>"tinbai");
+                $type[] = array("name"=>"Ưu thế vượt trội","key"=>"uuthe");
+                $type[] = array("name"=>"Đối tượng tuyển sinh","key"=>"tuyensinh");
+                $type[] = array("name"=>"Ngành đào tạo","key"=>"nganhdaotao");
+                $type[] = array("name"=>"Kỹ năng thực tế","key"=>"kynang");
+                $type[] = array("name"=>"Giảng viên","key"=>"giangvien");
+            }
+
             return $type;
         }
     }

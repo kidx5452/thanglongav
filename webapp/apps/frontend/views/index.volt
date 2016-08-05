@@ -98,30 +98,23 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
+            {% for key,item in slideshow %}
+            <li data-target="#myCarousel" data-slide-to="{{ key }}" class="{{ key==0?"active":"" }}"></li>
+            {% endfor %}
         </ol><!-- Indicators -->
         <div class="carousel-inner">
-            <div class="item active">
-                <a href="#"><img src="/frontend_res/images/img_slide/slide1.jpg" alt=""></a>
+            {% for key,item in slideshow %}
+            <div class="item {{ key==0?'active':'' }}">
+                <a href="{{ item.url }}"><img src="/{{ item.avatar }}" alt=""></a>
                 <div class="container">
                     <div class="carousel-caption">
                         <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
-                            <h1>Hotline <strong>0988 666 888 </strong></h1>
+                            {{ item.captions }}
                         </div>
                     </div><!--/.content -->
                 </div><!--/.container -->
             </div>
-            <div class="item">
-                <a href="#"><img src="/frontend_res/images/img_slide/slide2.jpg" alt=""></a>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
-                            <h1>Hotline <strong>0988 666 888 </strong></h1>
-                        </div>
-                    </div><!--/.content -->
-                </div><!--/.container -->
-            </div>
+            {% endfor %}
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="icon-prev"></span></a>
         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="icon-next"></span></a>

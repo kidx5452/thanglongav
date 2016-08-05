@@ -2,7 +2,7 @@
     <div class="col-sm-12">
         <section class="panel">
             <header class="panel-heading head-border">
-                {{ labelkey['article.lbl_list'] }}
+                {{ labelkey['article.lbl_list'] }}: <b>{{ catobject.name }}</b>
             </header>
             <div class="panel-body">
                 <form method="get" action="" class="form-horizontal tasi-form form-inline">

@@ -64,6 +64,40 @@ class CategoryController extends ControllerBase
             $category = $categoryObject;
 
         }
+        else if($categoryObject->type=="learning"){
+            $categoryObject->uuthe = Article::query()
+                ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
+                ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1 and Webapp\Frontend\Models\Article.types= :types:', array('catid' => $id,'types'=>"uuthe"))
+                ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
+                ->limit(2,0)
+                ->execute();
+            $categoryObject->tuyensinh = Article::query()
+                ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
+                ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1 and Webapp\Frontend\Models\Article.types= :types:', array('catid' => $id,'types'=>"tuyensinh"))
+                ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
+                ->limit(4,0)
+                ->execute();
+            $categoryObject->nganhdaotao = Article::query()
+                ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
+                ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1 and Webapp\Frontend\Models\Article.types= :types:', array('catid' => $id,'types'=>"nganhdaotao"))
+                ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
+                ->limit(2,0)
+                ->execute();
+            $categoryObject->kynang = Article::query()
+                ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
+                ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1 and Webapp\Frontend\Models\Article.types= :types:', array('catid' => $id,'types'=>"kynang"))
+                ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
+                ->limit(3,0)
+                ->execute();
+            $categoryObject->giangvien = Article::query()
+                ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
+                ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1 and Webapp\Frontend\Models\Article.types= :types:', array('catid' => $id,'types'=>"giangvien"))
+                ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
+                ->limit(16,0)
+                ->execute();
+            $category = $categoryObject;
+
+        }
         $htmlx = $this->render_template("category/template",$categoryObject->type,$category);
         $this->view->htmlx = $htmlx;
         /** Header */

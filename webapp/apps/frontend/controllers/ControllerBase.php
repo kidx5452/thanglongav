@@ -7,6 +7,7 @@
     use Webapp\Frontend\Models\Category;
     use Webapp\Frontend\Models\CategoryView;
     use Webapp\Frontend\Models\Partner;
+    use Webapp\Frontend\Models\ArticleView;
 
     class ControllerBase extends Controller {
         public $userinfo;
@@ -27,6 +28,16 @@
             $this->view->social = $this->config->social;
             $this->view->ismobile = $this->ismobile;
             $this->view->list_partner = Partner::find(['conditions' => 'status = 1']);
+
+            /* Load Slideshow */
+            $query = "poskey='slideshow'";
+            $slideshow = ArticleView::find(
+                array(
+                    'conditions' => $query,
+                    "order" => "sorts ASC"
+                )
+            );
+            $this->view->slideshow = $slideshow;
 
         }
 

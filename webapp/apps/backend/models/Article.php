@@ -126,7 +126,7 @@ class Article extends BaseModel
                 array('key'=>'slideshow','name'=>'Slideshow - Bài viết slideshow'),
                 //array('key'=>'leftslideshow','name'=>'Left in slideshow'),
                 //array('key'=>'rightslideshow','name'=>'Right in slideshow').
-                array('key'=>'pinslideshow','name'=>'Pin in slideshow - Tin tức trong slideshow')
+                //array('key'=>'pinslideshow','name'=>'Pin in slideshow - Tin tức trong slideshow')
         );
     }
 }

@@ -189,8 +189,8 @@ class Category extends BaseModel
     }
     public static function position(){
         return array(
-                array('key'=>'topmenu','name'=>'Top Menu'),
-                array('key'=>'leftcatmenu','name'=>'Left Menu (Category)'),
+                //array('key'=>'topmenu','name'=>'Top Menu'),
+                //array('key'=>'leftcatmenu','name'=>'Left Menu (Category)'),
                 array('key'=>'menublockhome','name'=>'Menu Block (Home)')
         );
     }
