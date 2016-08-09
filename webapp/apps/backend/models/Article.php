@@ -81,6 +81,37 @@ class Article extends BaseModel
      */
     public $types;
 
+
+    /**
+     *
+     * @var string
+     */
+    public $date_publish;
+
+    /**
+     *
+     * @var string
+     */
+    public $duration;
+
+    /**
+     *
+     * @var string
+     */
+    public $countmedia;
+
+    /**
+     *
+     * @var string
+     */
+    public $manufacture;
+
+    /**
+     *
+     * @var string
+     */
+    public $price;
+
     /**
      * Initialize method for model.
      */

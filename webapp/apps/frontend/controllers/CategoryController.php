@@ -98,6 +98,15 @@ class CategoryController extends ControllerBase
             $category = $categoryObject;
 
         }
+        else if($categoryObject->type=="creator"){
+            $categoryObject->listarticle = Article::query()
+                ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
+                ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1', array('catid' => $id))
+                ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
+                ->limit(27,0)
+                ->execute();
+            $category = $categoryObject;
+        }
         $htmlx = $this->render_template("category/template",$categoryObject->type,$category);
         $this->view->htmlx = $htmlx;
         /** Header */

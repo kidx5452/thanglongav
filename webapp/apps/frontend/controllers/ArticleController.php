@@ -19,13 +19,26 @@ class ArticleController extends ControllerBase
 
         $query = "atid={$data->id}";
         $listcat = AtCat::find(array('conditions' => $query));
+        $detailType = "detail";
+        $relatedCount = 5;
+        if($data->types=="audio") {
+            $detailType = "audio";
+            $relatedCount = 4;
+        }
+        else if($data->types=="video"){
+            $detailType = "video";
+            $relatedCount = 4;
+        }
+        /*if(count($listcat)<=0) $detailType = "detail";
+        else{
 
+        }*/
         $query = $listcat->toArray() ? 'atid != '.$data->id.' AND catid = '.$listcat->toArray()[0]['catid'] : 0;
         $relatedpost = AtCat::find(
             array(
                 'conditions' => $query,
                 'order' => 'atid DESC',
-                'limit' => 5
+                'limit' => $relatedCount
             )
         );
         $viewdata = new \stdClass();
@@ -34,7 +47,7 @@ class ArticleController extends ControllerBase
         //$viewdata->listcat = $listcat;
         $viewdata->data = $data;
         $viewdata->relatedpost = $relatedpost;
-        $this->view->htmlx = $this->render_template("article/detail","detail",$viewdata);
+        $this->view->htmlx = $this->render_template("article/detail","$detailType",$viewdata);
         /** Header */
         $this->view->header = array(
                 "title"=>$data->name,

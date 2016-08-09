@@ -1,9 +1,9 @@
 <!--bootstrap picker-->
-<link rel="stylesheet" type="text/css" href="/js/bootstrap-datepicker/css/datepicker.css"/>
-<link rel="stylesheet" type="text/css" href="/js/bootstrap-timepicker/compiled/timepicker.css"/>
-<link rel="stylesheet" type="text/css" href="/js/bootstrap-colorpicker/css/colorpicker.css"/>
-<link rel="stylesheet" type="text/css" href="/js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
-<link rel="stylesheet" type="text/css" href="/js/bootstrap-datetimepicker/css/datetimepicker.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-datepicker/css/datepicker.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-timepicker/compiled/timepicker.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-colorpicker/css/colorpicker.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-datetimepicker/css/datetimepicker.css"/>
 
 <a href="{{ backurl }}" class="btn btn-sm btn-success addon-btn m-b-10"><i class="zmdi zmdi-arrow-left"></i> {{ labelkey['general.lbl_back'] }}</a>
 <div class="row">
@@ -82,12 +82,12 @@
 </div>
 
 <!--bootstrap picker-->
-<script type="text/javascript" src="/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="/js/bootstrap-daterangepicker/moment.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script type="text/javascript" src="/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-<script type="text/javascript" src="/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 
 <!--picker initialization-->
-<script src="/js/picker-init.js"></script>
+<script src="/backend_res/js/picker-init.js"></script>

@@ -61,7 +61,8 @@
             }
             if ($this->request->isPost()) {
                 try {
-                    $datapost = Helper::post_to_array("name,captions,descriptions,status,content,lang,cover_video,types");
+                    $datapost = Helper::post_to_array("name,captions,descriptions,status,content,lang,cover_video,types,date_publish,duration,countmedia,manufacture,price");
+                    if(!empty($datapost['date_publish'])) $datapost['date_publish'] = strtotime($datapost['date_publish']);
                     $avatar = $this->post_file_key("avatar");
                     if ($avatar != null) $datapost['avatar'] = $avatar;
                     $coveravatar = $this->post_file_key("coveravatar");

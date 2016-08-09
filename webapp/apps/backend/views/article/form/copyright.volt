@@ -1,3 +1,8 @@
+<!--bootstrap picker-->
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-datepicker/css/datepicker.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-timepicker/compiled/timepicker.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+<link rel="stylesheet" type="text/css" href="/backend_res/js/bootstrap-datetimepicker/css/datetimepicker.css"/>
 <div class="row">
     <div class="col-md-12">
         <section class="panel-">
@@ -34,8 +39,28 @@
                                             <div class="col-md-8"><input type="text" name="name" value="{{ object['name'] }}" class="form-control"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">{{ labelkey['article.lbl_descriptions'] }}</label>
+                                            <label class="col-md-2 control-label">Ca sỹ - nhạc sỹ</label>
                                             <div class="col-md-8"><input type="text" name="captions" value="{{ object['captions'] }}" class="form-control"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label" for="dob">Ngày phát hành</label>
+                                            <div class="col-md-10"><input type="text" data-date-format="dd-mm-yyyy" class="form-control form-control-inline input-medium default-date-picker" value="{{ date('d-m-Y',object['date_publish']) }}" name="date_publish"/></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Thời gian</label>
+                                            <div class="col-md-8"><input type="text" name="duration" value="{{ object['duration'] }}" class="form-control"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Số bài hát</label>
+                                            <div class="col-md-8"><input type="text" name="countmedia" value="{{ object['countmedia'] }}" class="form-control"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Nhà sản xuất</label>
+                                            <div class="col-md-8"><input type="text" name="manufacture" value="{{ object['manufacture'] }}" class="form-control"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Giá</label>
+                                            <div class="col-md-8"><input type="text" name="price" value="{{ object['price'] }}" class="form-control"></div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">{{ labelkey['article.lbl_thumb'] }}</label>
@@ -109,3 +134,13 @@
                 });
     }
 </script>
+<!--bootstrap picker-->
+<script type="text/javascript" src="/backend_res/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="/backend_res/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+<!--picker initialization-->
+<script src="/backend_res/js/picker-init.js"></script>
