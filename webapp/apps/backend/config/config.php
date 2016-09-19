@@ -6,6 +6,11 @@ return new \Phalcon\Config(array(
         'host'        => 'localhost',
         'username'    => 'thanglonga_demo',
         'password'    => 'demo',
+        
+//        'port' => '3306',
+//        'username'    => 'root',
+//        'password'    => '12345',
+        
         'dbname'      => 'thanglonga_demo',
         'charset'     => 'utf8',
     ),

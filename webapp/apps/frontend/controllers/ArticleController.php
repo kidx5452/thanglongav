@@ -14,6 +14,7 @@ class ArticleController extends ControllerBase
     public function detailAction(){
         //if(!$this->ismobile) $this->view->setMainView("article");
         $id = $this->dispatcher->getParam("id") ? $this->dispatcher->getParam("id") : $this->request->get("id");
+        //var_dump($id);die;
         $data = Article::findFirst($id);
         if(!$data) { $this->response->redirect("/error/e404"); return false; }
 
@@ -77,6 +78,31 @@ class ArticleController extends ControllerBase
         //$viewdata->listcat = $listcat;
         $viewdata->data = $data;
         $viewdata->relatedpost = $relatedpost;
+        $query = "catid={$listcat[0]['catid']}";
+        $cat = AtCat::find(array('conditions' => $query));
+        $list_cat = $cat->toArray();
+        $list_id = array_column($list_cat, 'atid');
+        unset($list_id[array_search($id, $list_id)]); //remove current at out of list
+        $list_id= array_values($list_id);
+        $list_at = Article::find(
+            [
+                'id IN ({list_id:array}) AND types = "'.$data->types.'"',
+                //'conditions' => 'types = '.$data->types,
+                'bind' => [
+                    'list_id' => $list_id
+                ],
+                "order" => "view_count DESC",
+                //'limit' => $relatedCount
+            ]
+        );
+        //increase view + 1
+        $datapost['view_count']= ($data->view_count + 1);
+        $data->map_object($datapost);
+        $data->save();
+
+
+        $viewdata->news = $list_at;
+
         $this->view->htmlx = $this->render_template("article/detail","$detailType",$viewdata);
         /** Header */
         $this->view->header = array(
@@ -87,5 +113,4 @@ class ArticleController extends ControllerBase
                 "image"=>$this->config->media->host.$data->avatar
         );
     }
-
 }

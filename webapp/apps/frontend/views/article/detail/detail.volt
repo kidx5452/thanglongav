@@ -28,8 +28,8 @@
                             <h2>Tin tức khác</h2>
                             {% for item in object.relatedpost %}
                             <li>
-                                <figure><img src="/{{ item.Article.avatar }}" alt=""/></figure>
-                                <figcaption><a href="{{ item.Article.getlink() }}" title="">{{ item.Article.name }}</a></figcaption>
+                                <figure><img src="/{{ item.avatar }}" alt=""/></figure>
+                                <figcaption><a href="{{ item.getlink() }}" title="">{{ item.name }}</a></figcaption>
                             </li>
                             {% endfor %}
                         </ul>
@@ -44,12 +44,9 @@
                     <h2>Xem nhiều nhất</h2>
                     <ul class="xemnhieu">
                         <figure><img alt="" src="/frontend_res/images/n1.jpg"></figure>
-                        <li><a title="" href="#">Tưng bừng khai giảng lớp DIỄN XUẤT khóa 1</a></li>
-                        <li><a href="#">Lớp học vui nhộn....cô giáo xì tin ....vui tóa mệt tý không sao ^^ !!!</a></li>
-                        <li><a href="#">Năng nổ, nhiệt tình.....Các bạn thử sức bản thân với các nhân vật trong phim...^^</a></li>
-                        <li><a href="#">Tự diễn trước ống kính của… chính mình</a></li>
-                        <li><a href="#">Các Học viên Hăng say với Buổi học Kỹ thuật Biểu diễn Sân khấu Điện ảnh của Cô Minh Vượng</a></li>
-                        <li><a href="#">Những hình ảnh ngộ nghĩnh đáng yêu trong học tập, nhập vai của HV Khóa I</a></li>
+                        {% for item in object.news %}
+                        <li><a title=""  href="{{ item.getlink() }}">{{ item.name }}</a></li>
+                        {% endfor %}
                     </ul>
                 </aside><!--End-->
             </div><!--End-sidebar-right-->

@@ -106,6 +106,11 @@ class Article extends BaseModel
      * @var string
      */
     public $price;
+    
+    /**
+     * @var int
+     */
+    public $view_count;
 
     /**
      * Initialize method for model.
