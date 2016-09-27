@@ -1,5 +1,6 @@
 <?php
 namespace Webapp\Backend\Models;
+use Webapp\Backend\Utility\Helper;
 class Article extends BaseModel
 {
 
@@ -135,7 +136,10 @@ class Article extends BaseModel
     {
         return 'article';
     }
-
+    public function getlink(){
+        return '/'.Helper::Cleanurl(Helper::khongdau($this->name)).'_a'.$this->id.'.html';
+        //return "/article/detail?id=".$this->id;
+    }
     /**
      * Allows to query a set of records that match the specified conditions
      *

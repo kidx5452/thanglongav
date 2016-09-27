@@ -1,7 +1,7 @@
 <section id="box-news-home">
     <div class="container">
         <div class="row">
-            <div class="heading-box"><h2>Thanglong Av</h2><span>{{ object.name }}</span></div>
+            <div class="heading-box"><span>{{ object.name }}</span></div>
 
             <ul class="main_list_news">
                 {% for item in object.listarticle %}

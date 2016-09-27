@@ -40,6 +40,12 @@ class ArticleView extends BaseModel
     public $url;
 
     /**
+     *
+     * @var String
+     */
+    public $catid;
+
+    /**
      * Initialize method for model.
      */
     public function initialize()

@@ -33,6 +33,7 @@
                                                 {% if object['avatar']|length >0 %}
                                                     <p class="clearfix"><a href="/{{ object['avatar'] }}" target="_blank"><img width="250" src="/{{ object['avatar'] }}" alt="Cover Photo"></a></p>
                                                 {% endif %}
+                                                <input type="hidden" name="avatar" value="{{ object['avatar'] }}">
                                                 <input id="file-0" class="file" type="file" name="avatar" accept="image/*">
                                             </div>
                                         </div>

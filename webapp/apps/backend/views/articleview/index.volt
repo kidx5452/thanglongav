@@ -8,7 +8,7 @@
                 <form method="get" action="" class="form-horizontal tasi-form">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="form" class="btn btn-success m-b-10">{{ labelkey['general.btn_addnew'] }}</a>
+                            <a href="form?catid={{ catid }}" class="btn btn-success m-b-10">{{ labelkey['general.btn_addnew'] }}</a>
                         </div>
                     </div>
                 </form>

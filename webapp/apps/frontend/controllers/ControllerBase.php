@@ -8,6 +8,7 @@
     use Webapp\Frontend\Models\CategoryView;
     use Webapp\Frontend\Models\Partner;
     use Webapp\Frontend\Models\ArticleView;
+    use Webapp\Frontend\Models\Configs;
 
     class ControllerBase extends Controller {
         public $userinfo;
@@ -18,6 +19,7 @@
         public $ismobile;
 
         protected function initialize() {
+            
             //Header
             $this->ismobile = Helper::isMobile();
             $topmenu = self::getPosMenu(0, 'topmenu');
@@ -28,16 +30,14 @@
             $this->view->social = $this->config->social;
             $this->view->ismobile = $this->ismobile;
             $this->view->list_partner = Partner::find(['conditions' => 'status = 1']);
+            $this->view->configapp = $this->config;
+           
 
-            /* Load Slideshow */
-            $query = "poskey='slideshow'";
-            $slideshow = ArticleView::find(
-                array(
-                    'conditions' => $query,
-                    "order" => "sorts ASC"
-                )
-            );
-            $this->view->slideshow = $slideshow;
+            $configs = Configs::find()->toArray();
+            foreach($configs as $key=>$value){
+                $configs[$value['keys']] = $value;
+            }
+            $this->view->configs = $configs;
 
         }
 

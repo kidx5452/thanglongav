@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-12">
-                <div class="heading"><h2>Thanglong Av</h2><span>{{ object.name }}</span></div>
+                <div class="heading"><span>{{ object.name }}</span></div>
                 <p class="sapo wow fadeIn" data-wow-delay="0.2s">{{ object.caption }}</p>
                 <p class="view-ct-trans fl wow fadeIn animated" data-wow-delay="0.4s"><a href="{{ object.getlink() }}">Chi tiết</a></p>
             </div>
@@ -20,7 +20,7 @@
                                     <h3><a href="{{ item.getlink() }}">{{ item.name }}</a></h3>
                                     <div class="tlav-sx-time">
                                         <time>{{ date("d-m-Y",item.datecreate) }}</time>
-                                        <a href="{{ item.getlink() }}" class="btn-cart" data-toggle="modal" data-target="#idbuy"><i class="fa fa-shopping-cart"></i> Mua</a>
+                                        <a href="{{ item.getlink() }}" class="btn-cart"><i class="fa fa-eye"></i> Chi tiết</a>
                                     </div>
                                 </div>
                             </li>

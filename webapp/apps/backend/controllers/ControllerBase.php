@@ -6,6 +6,7 @@
     use Webapp\Backend\Locale\Culture;
     use Webapp\Backend\Utility\Helper;
     use Webapp\Backend\Utility\Module;
+    use Webapp\Frontend\Models\Configs;
 
     class ControllerBase extends Controller {
         public $userinfo;
@@ -48,6 +49,8 @@
             $this->view->sidebar = $sidebar;
             $this->view->currenturl = Helper::cpagerparm("lang");
             $this->view->media = $this->config->media;
+            $this->config->application->baseUrl = rtrim($this->config->application->baseUrl,"/");
+            $this->view->config = $this->config;
             $this->view->application = $this->config->application;
         }
 

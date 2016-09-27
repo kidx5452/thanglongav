@@ -5,26 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ header['title'] }}</title>
-    <meta name="description" content="{{ header['desc'] }}" />
-    <meta name="keyword" content="{{ header['keyword'] }}" />
-    <meta name="robots" content="index, follow" />
-    <meta content='wsi.vn' name='author' />
-    <meta content='index, follow' name='GOOGLEBOT' />
-    <meta content='index, follow' name='yahooBOT' />
-    <meta name="Slurp" content="index,follow" />
-    <meta name="revisit-after" content="1 days" />
-    <meta name="MSNBot" content="index,follow" />
-    <meta http-equiv="Content-Language" content="vi" />
-    <meta name="revisit-after" content="1 days" />
-    <meta property="og:title" content="{{ header['title'] }}" />
-    <meta property="og:url" content="{{ header['canonial'] }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ header['image'] }}" />
-    <meta property="og:site_name" content="thanglongav.vn" />
-    <meta property="og:description" content="{{ header['desc'] }}" />
-    <link rel="shortcut icon" href="http://wsi.vn/web/images/icons/fav-icon.png">
-    <link rel="canonical" href="{{ header['canonial'] }}" />
-    <link rel="alternate feed" type="application/rss+xml" title="Sitemap" href="http://thanglongav.vn/sitemap" />
+    <meta name="description" content="{{ header['desc'] }}"/>
+    <meta name="keyword" content="{{ header['keyword'] }}"/>
+    <meta name="robots" content="index, follow"/>
+    <meta content='wsi.vn' name='author'/>
+    <meta content='index, follow' name='GOOGLEBOT'/>
+    <meta content='index, follow' name='yahooBOT'/>
+    <meta name="Slurp" content="index,follow"/>
+    <meta name="revisit-after" content="1 days"/>
+    <meta name="MSNBot" content="index,follow"/>
+    <meta http-equiv="Content-Language" content="vi"/>
+    <meta name="revisit-after" content="1 days"/>
+    <meta property="og:title" content="{{ header['title'] }}"/>
+    <meta property="og:url" content="{{ header['canonial'] }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="{{ header['image'] }}"/>
+    <meta property="og:site_name" content="thanglongav.vn"/>
+    <meta property="og:description" content="{{ header['desc'] }}"/>
+    <link rel="shortcut icon" href="http://demo.thanglongav.vn/frontend_res/skins/images/logo.png">
+    <link rel="canonical" href="{{ header['canonial'] }}"/>
+    <link rel="alternate feed" type="application/rss+xml" title="Sitemap" href="http://thanglongav.vn/sitemap"/>
 
     <link rel="stylesheet" href="/frontend_res/skins/style.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/responsive.css" type="text/css" media="all">
@@ -60,9 +60,9 @@
             </ul>
             <div class="col-share">
                 <ul class="social-network social-circle">
-                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="icoLinkedin" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
-                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="{{ configs['facebook']['contents'] }}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="{{ configs['youtube']['contents'] }}" class="icoLinkedin" title="Youtube"><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="{{ configs['google']['contents'] }}" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -93,35 +93,39 @@
         </div><!-- /.container -->
     </div>
 </header>
+{% if slideshow|length >0  %}
+    <section id="slide">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-<section id="slide">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-            {% for key,item in slideshow %}
-            <li data-target="#myCarousel" data-slide-to="{{ key }}" class="{{ key==0?"active":"" }}"></li>
-            {% endfor %}
-        </ol><!-- Indicators -->
-        <div class="carousel-inner">
-            {% for key,item in slideshow %}
-            <div class="item {{ key==0?'active':'' }}">
-                <a href="{{ item.url }}"><img src="/{{ item.avatar }}" alt=""></a>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
-                            {{ item.captions }}
-                        </div>
-                    </div><!--/.content -->
-                </div><!--/.container -->
+            <ol class="carousel-indicators">
+                {% for key,item in slideshow %}
+                    <li data-target="#myCarousel" data-slide-to="{{ key }}" class="{{ key==0?"active":"" }}"></li>
+                {% endfor %}
+            </ol><!-- Indicators -->
+            <div class="carousel-inner">
+                {% for key,item in slideshow %}
+                    <div class="item {{ key==0?'active':'' }}">
+                        <a href="{{ item.url }}"><img src="/{{ item.avatar }}" alt=""></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
+                                    {{ item.captions }}
+                                </div>
+                            </div><!--/.content -->
+                        </div><!--/.container -->
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="icon-prev"></span></a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="icon-next"></span></a>
-    </div><!-- /.carousel -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="icon-prev"></span></a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="icon-next"></span></a>
+        </div><!-- /.carousel -->
 
-</section><!--End-slide-->
-
+    </section><!--End-slide-->
+{% else %}
+    <section>
+        <div style="height: 100px;width: 100%"></div>
+    </section>
+{% endif %}
 
 {{ content() }}
 
@@ -170,17 +174,7 @@
                         <div class="drawer-header-icon"><i class="fa fa-angle-down"></i></div>
                     </div>
                     <div class="drawer-content">
-                        <h2>Tuyển dụng</h2>
-                        <ul class="list-dot-td">
-                            <li>Tuyển dụng tháng 8 Thanglong Av với mức lương cao, môi trường làm việc thân thiện</li>
-                            <li>Tuyển dụng tháng 8 Thanglong Av với mức lương cao, môi trường làm việc thân thiện</li>
-                        </ul>
-
-                        <h2>Gia nhập mạng tlav</h2>
-                        <ul class="list-dot-td">
-                            <li>Mời bạn gia nhập mạng tlav</li>
-                            <li>Mời bạn gia nhập mạng tlav</li>
-                        </ul>
+                        {{ configs['work']['contents'] }}
                     </div>
                 </div>
             </div><!-- /#drawer -->
@@ -193,12 +187,12 @@
         <div class="row">
             <div class="box-tlav-he">
                 <div class="col-md-7 col-sm-6 hotline-f">
-                    HOTLINE<br><strong>0988 666 888</strong>
+                    HOTLINE<br><strong>{{ configs['hotline']['contents'] }}</strong>
                 </div>
             </div>
             <div class="box-tlav-he">
                 <div class="col-md-5 col-sm-6 email-f">
-                    EMAIL<br><strong>thanglongav@gmail.com</strong>
+                    EMAIL<br><strong>{{ configs['email']['contents'] }}</strong>
                 </div>
             </div>
         </div>
@@ -220,10 +214,7 @@
         </div>
 
         <p>
-            Thăng Long Av<br>
-            Địa chỉ: Số 26 ngõ 81 Láng Hạ, Ba Đình, Hà Nội.<br>
-            Điện thoại: (84-4) 666 888 / Fax: (84-4) 666 888<br>
-            Email: thanglongav@gmail.com / Webiste: www.thanglongav.vn
+            {{ configs['footer']['contents']|nl2br }}
         </p>
     </div>
 </section><!-- End-footer -->

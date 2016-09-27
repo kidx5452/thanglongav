@@ -1,4 +1,7 @@
 {{ htmlx }}
 {% if painginfo is not empty %}
-    {% include "layouts/paging.volt" %}
+    <div style="padding-top: 5px;clear: both;">
+        {% include "layouts/paging.volt" %}
+    </div>
+
 {% endif %}

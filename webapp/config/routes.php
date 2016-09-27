@@ -31,6 +31,12 @@ foreach ($application->getModules() as $key => $module) {
         'action' => 'index',
         'id' => 1, // ([0-9]+)
     ));
+    //Category
+    $router->add('/{slug}_cd{id:[0-9]+}.html', array(
+        'controller' => 'category',
+        'action' => 'detail',
+        'id' => 1, // ([0-9]+)
+    ));
 
     //Article
     $router->add('/{slug}_a{id:[0-9]+}.html', array(

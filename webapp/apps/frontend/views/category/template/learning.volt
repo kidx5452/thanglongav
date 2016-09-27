@@ -69,7 +69,7 @@
             <div id="pd-teacher" class="slide-teacher">
                 {% for item in object.giangvien %}
                 <div class="pd">
-                    <h6><a href="#">{{ item.name }}</a></h6><a href="{{ item.getlink() }}" title="">
+                    <h6><a href="{{ item.getlink() }}">{{ item.name }}</a></h6><a href="{{ item.getlink() }}" title="">
                         <figure><img src="/{{ item.avatar }}" alt=""></figure></a>
                     <?php $arr = explode('-', $item->captions) ?>
                     <p>{{ arr[0] }}</p>

@@ -37,7 +37,8 @@
                 $html .= "<a href='delete?id={$row->id}'>Xóa</a> | ";
                 $html .= "<a href='form?cattype=$type&parentid={$row->id}'>Thêm con</a> | ";
                 $html .= "<a href='{$row->getlink()}' target='_blank'>Xem trên client</a> | ";
-                $html .= "<a href='{$row->get_article_link()}'>Xem bài viết</a>";
+                $html .= "<a href='{$row->get_article_link()}'>Xem bài viết</a> | ";
+                $html .= "<a target='_blank' href='/backend/articleview/index?catid={$row->id}'>Cấu hình slideshow</a>";
                 $html .= self::getMenu($row->id, $type);
                 $html .= "</li>";
             }

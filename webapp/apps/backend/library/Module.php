@@ -92,7 +92,8 @@ class Module
         $sidebar[] = array("name" => $langarr['sidebar.displayconfig'], "icon" => "zmdi zmdi-settings-square", "key" => "categoryview,articleview,config", "controller" => "javascript:void(0)", "child" => array(
             array("name" => "Menu", "key" => "menuview", "controller" => "$baseuri/menu/index"),
             array("name" => $langarr['sidebar.category'], "key" => "categoryview", "controller" => "$baseuri/categoryview/index"),
-            array("name" => $langarr['sidebar.article'], "key" => "articleview", "controller" => "$baseuri/articleview/index"),
+            array("name" => "Top Slideshow", "key" => "articleview", "controller" => "$baseuri/articleview/index"),
+            array("name" => "Cấu hình thông tin mặc định", "key" => "config", "controller" => "$baseuri/configs/index"),
             //array("name" => $langarr['sidebar.imageconfig'], "key" => "config", "controller" => "$baseuri/config/image"),
         ));
         $sidebar[] = array("name" => $langarr['sidebar.partner'], "icon" => "zmdi zmdi-walk zmdi-hc-fw", "key" => "partner", "controller" => "$baseuri/partner/index");

@@ -47,11 +47,11 @@
                                 <div class="contents-music">
                                     {{ object.data.content }}
                                 </div>
-                                <div class="button-wrap">
+                                {#<div class="button-wrap">
                                     <a href="#">
                                         <div class="def-button" data-toggle="modal" data-target="#idbuy"><div class="price">{{ object.data.price }}$</div> Mua ngay</div>
                                     </a>
-                                </div>
+                                </div>#}
                                 <div class="block_timer_share">
                                     <div class="block_timer pull-left"><strong>CHIA SẺ</strong></div>
                                     <div class="pull-right">

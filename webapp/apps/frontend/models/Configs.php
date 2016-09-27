@@ -1,6 +1,7 @@
 <?php
-namespace Webapp\Backend\Models;
-class ArticleView extends BaseModel
+namespace Webapp\Frontend\Models;
+use Webapp\Frontend\Utility\Helper;
+class Configs extends BaseModel
 {
 
     /**
@@ -11,46 +12,22 @@ class ArticleView extends BaseModel
 
     /**
      *
-     * @var integer
+     * @var string
      */
-    public $atid;
+    public $keys;
 
     /**
      *
      * @var string
      */
-    public $avatar;
+    public $name;
 
     /**
      *
-     * @var integer
+     * @var string
      */
-    public $sorts;
+    public $contents;
 
-    /**
-     *
-     * @var integer
-     */
-    public $captions;
-
-    /**
-     *
-     * @var String
-     */
-    public $url;
-
-    /**
-     *
-     * @var String
-     */
-    public $catid;
-    /**
-     * Initialize method for model.
-     */
-    public function initialize()
-    {
-        $this->belongsTo('atid', '\Webapp\Backend\Models\Article', 'id', array('alias' => 'Article'));
-    }
 
     /**
      * Returns table name mapped in the model.
@@ -59,14 +36,14 @@ class ArticleView extends BaseModel
      */
     public function getSource()
     {
-        return 'article_view';
+        return 'configs';
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return ArticleView[]
+     * @return Configs[]
      */
     public static function find($parameters = null)
     {
@@ -77,7 +54,7 @@ class ArticleView extends BaseModel
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return ArticleView
+     * @return Configs
      */
     public static function findFirst($parameters = null)
     {

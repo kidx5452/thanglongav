@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <a href="index" class="btn btn-sm btn-success addon-btn m-b-10"><i class="zmdi zmdi-arrow-left"></i> {{ labelkey['general.lbl_back'] }}</a>
+        <a href="index?catid={{ catid }}" class="btn btn-sm btn-success addon-btn m-b-10"><i class="zmdi zmdi-arrow-left"></i> {{ labelkey['general.lbl_back'] }}</a>
         <section class="panel-">
             <div class="panel-body no-pad">
                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -29,7 +29,7 @@
                                                 </select>
                                             </div>
                                         </div>#}
-                                        <div class="form-group">
+                                        <div class="form-group" style="display: none">
                                             <label class="col-md-2 control-label">{{ labelkey['articleview.lbl_position'] }}</label>
 
                                             <div class="col-md-8">

@@ -1,6 +1,6 @@
 <section id="box-youtube-net">
     <div class="container">
-        <div class="heading-box"><h2>Thanglong Av</h2><span>{{ object.name }}</span></div>
+        <div class="heading-box"><span>{{ object.name }}</span></div>
         <div class="slide-videos owl-theme">
             {% for item in object.listarticle %}
             <article class="module-videos">

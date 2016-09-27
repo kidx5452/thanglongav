@@ -151,6 +151,10 @@ class Category extends BaseModel
         return '/'.Helper::Cleanurl(Helper::khongdau($this->name)).'_c'.$this->id.'.html';
         //return "/category/view?id=".$this->id;
     }
+    public function getlinkDetail(){
+        return '/'.Helper::Cleanurl(Helper::khongdau($this->name)).'_cd'.$this->id.'.html';
+        //return "/category/view?id=".$this->id;
+    }
 
     /**
      * Returns table name mapped in the model.
