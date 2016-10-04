@@ -1,5 +1,5 @@
 <section id="tlav-alb-vd">
-    <div class="heading-box"><h2>Thanglong Av</h2><span>{{ object.name }}</span></div>
+    <div class="heading-box"><span>{{ object.name }}</span></div>
 
     <div class="box-album">
         <div class="container mod-newsflash-adv posts">

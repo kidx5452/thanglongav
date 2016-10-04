@@ -1,5 +1,5 @@
 <section id="tlav-spdh">
-    <div class="heading-box"><h2>Thanglong Av</h2><span>{{ object['name'] }}</span></div>
+    <div class="heading-box"><span>{{ object['name'] }}</span></div>
     {% for item in object['listchild'] %}
     <div class="box-ground">
         <h3>{{ item['name'] }}</h3>

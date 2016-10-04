@@ -87,8 +87,9 @@ $(document).ready(function(){
 
 // tlav to scroll menu
     $(window).scroll(function () {
-
-        //Display or hide scroll to top button 
+		var topMenuHeight = 58;
+		var scrollItems=null;
+        //Display or hide scroll to top button
         if ($(this).scrollTop() > 100) {
             $('.scrollup').fadeIn();
         } else {
@@ -105,10 +106,14 @@ $(document).ready(function(){
         var fromTop = $(this).scrollTop() + topMenuHeight + 10;
 
         // Get id of current scroll item
-        var cur = scrollItems.map(function () {
-            if ($(this).offset().top < fromTop)
-                return this;
-        });
+		/*var cur;
+		if(scrollItems!=null){
+			cur = scrollItems.map(function () {
+				if ($(this).offset().top < fromTop)
+					return this;
+			});
+		}
+
 
         // Get the id of the current element
         cur = cur[cur.length - 1];
@@ -120,7 +125,7 @@ $(document).ready(function(){
             menuItems
             .parent().removeClass("active")
             .end().filter("[href=#" + id + "]").parent().addClass("active");
-        }
+        }*/
     });
 
     /*
@@ -187,25 +192,6 @@ jQuery(document).ready(function($) {
 			
 		});
 
-	$(".vi_creator").owlCarousel({
-		slideSpeed : 200,
-		items : 3,
-		itemsCustom : false,
-		itemsDesktop : [1199, 4],
-		itemsDesktopSmall : [979, 3],
-		itemsTablet : [768, 2],
-		itemsTabletSmall : false,
-		itemsMobile : [479, 1],
-		autoPlay: true,
-		stopOnHover: true,
-		addClassActive: true,
-		responsive: true,
-		pagination : false,
-		navigation: true,
-		navigationText: ["",""],
-
-	});
-
 
 });
 
@@ -235,41 +221,6 @@ jQuery(document).ready(function($) {
 			navigationText: ["",""], 
 		});
  
-});
-
-
-//Slide gallery
-
-// Important note! If you're adding CSS3 transition to slides, fadeInLoadedSlide should be disabled to avoid fade-conflicts.
-jQuery(document).ready(function($) {
-  var si = $('#gallery-vy').royalSlider({
-    addActiveClass: true,
-    arrowsNav: false,
-    controlNavigation: 'none',
-    autoScaleSlider: true, 
-    autoScaleSliderWidth: 960,     
-    autoScaleSliderHeight: 340,
-    loop: true,
-    fadeinLoadedSlide: false,
-    globalCaption: true,
-    keyboardNavEnabled: true,
-    globalCaptionInside: false,
-
-    visibleNearby: {
-      enabled: true,
-      centerArea: 0.5,
-      center: true,
-      breakpoint: 650,
-      breakpointCenterArea: 0.64,
-      navigateByCenterClick: true
-    }
-  }).data('royalSlider');
-
-  // link to fifth slide from slider description.
-  $('.slide4link').click(function(e) {
-    si.goTo(4);
-    return false;
-  });
 });
   
  

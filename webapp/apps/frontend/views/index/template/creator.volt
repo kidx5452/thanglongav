@@ -8,9 +8,9 @@
             </div>
             <div class="col-md-8 col-sm-12">
                 <div class="tlav-sx tlav-featured">
-                    <ul class="row">
+                    <ul class="row vi_creator">
                         {% for item in object.listarticle %}
-                            <li class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                            <li class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.2s">
                                 <figure>
                                     <a href="{{ item.getlink() }}"><img src="/{{ item.avatar }}" alt=""></a>
                                     {% if item.captions|length>0 %}<span class="sale-off">{{ item.captions }}</span>{% endif %}

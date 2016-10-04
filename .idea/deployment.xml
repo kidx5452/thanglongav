@@ -5,7 +5,7 @@
       <paths name="demo.thanglongav.vn">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/thanglonga/public_html/demo" local="$PROJECT_DIR$/webapp" web="/" />
+            <mapping deploy="/home/thanglonga/public_html" local="$PROJECT_DIR$/webapp" web="/" />
           </mappings>
         </serverdata>
       </paths>

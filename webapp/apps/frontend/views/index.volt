@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/frontend_res/skins/carousel.css" type="text/css" media="all">
     <link rel="stylesheet" href="/frontend_res/skins/menu-clean.css" type="text/css" media="all">
     <link rel="Stylesheet" href="/frontend_res/skins/animate.css" type="text/css" media="all">
-
+    <link href="/frontend_res/skins/royalslider.css" rel="stylesheet">
 
     <script type="text/javascript" src="/frontend_res/js/jquery.min.js"></script>
     <!--[if lt IE 9]>
@@ -41,11 +41,7 @@
     <![endif]-->
 
     <script type="text/javascript" src="/frontend_res/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/frontend_res/js/jquery.smartmenus.js"></script>
-    <script type="text/javascript" src="/frontend_res/js/owl.carousel.js"></script>
-    <script type="text/javascript" src="/frontend_res/js/smooth-scroll.js"></script>
-    <script type="text/javascript" src="/frontend_res/js/wow.min.js"></script>
-    <script type="text/javascript" src="/frontend_res/js/call-option.js"></script>
+
 
 </head>
 
@@ -94,8 +90,16 @@
     </div>
 </header>
 {% if slideshow|length >0  %}
-    <section id="slide">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+        <div id="gallery-vy" class="royalSlider rsDefault visibleNearby">
+            {% for key,item in slideshow %}
+                <a class="rsContent" href="{{ item.url }}">
+                   {{ item.slidemedia() }}
+                </a>
+            {% endfor %}
+        </div>
+
+        {#<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
                 {% for key,item in slideshow %}
@@ -118,9 +122,8 @@
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="icon-prev"></span></a>
             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="icon-next"></span></a>
-        </div><!-- /.carousel -->
+        </div><!-- /.carousel -->#}
 
-    </section><!--End-slide-->
 {% else %}
     <section>
         <div style="height: 100px;width: 100%"></div>
@@ -240,7 +243,12 @@
         </div>
     </div>
 </div><!-- End-Modal -->
-
+<script type="text/javascript" src="/frontend_res/js/jquery.smartmenus.js"></script>
+<script type="text/javascript" src="/frontend_res/js/owl.carousel.js"></script>
+<script type="text/javascript" src="/frontend_res/js/smooth-scroll.js"></script>
+<script type="text/javascript" src="/frontend_res/js/wow.min.js"></script>
+<script type="text/javascript" src="/frontend_res/js/jquery.royalslider.min.js"></script>
+<script type="text/javascript" src="/frontend_res/js/call-option.js"></script>
 
 </body>
 </html>

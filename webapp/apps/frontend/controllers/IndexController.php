@@ -22,6 +22,7 @@ class IndexController extends ControllerBase
                 "order" => "sorts ASC"
             )
         );
+     
         $this->view->slideshow = $slideshow;
     }
 
@@ -61,7 +62,7 @@ class IndexController extends ControllerBase
                 ->leftJoin('Webapp\Frontend\Models\AtCat', 'Webapp\Frontend\Models\AtCat.atid = Webapp\Frontend\Models\Article.id')
                 ->where('Webapp\Frontend\Models\AtCat.catid = :catid: and  Webapp\Frontend\Models\Article.status = 1', array('catid' => $category->id))
                 ->orderBy('Webapp\Frontend\Models\Article.datecreate DESC')
-                ->limit(3,0)
+                ->limit(6,0)
                 ->execute();
         }
         else if($category->type=="news"){

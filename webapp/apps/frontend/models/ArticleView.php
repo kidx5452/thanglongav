@@ -52,6 +52,16 @@ class ArticleView extends BaseModel
     {
         $this->belongsTo('atid', 'Webapp\Frontend\Models\Article', 'id', array('alias' => 'Article'));
     }
+    public function slidemedia(){
+        $url = $this->avatar;
+        $parsed 	= parse_url($url);
+        $hostname 	= $parsed['host'];  // www.youtube.com
+        if(in_array($hostname,array("www.youtube.com","youtube.com","youto.be","youtu.be"))) {
+            list($v,$id) = explode("=",$parsed['query']);
+            return '<iframe width="100%" src="https://www.youtube.com/embed/'.$id.'" frameborder="0" allowfullscreen></iframe>';
+        }
+        else return '<img src="/'.$this->avatar.'" class="rsImg"/>';
+    }
 
     /**
      * Returns table name mapped in the model.

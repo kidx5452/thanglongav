@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-12">
-                <div class="heading"><h2>Thanglong Av</h2><span>{{ object.name }}</span></div>
+                <div class="heading"><span>{{ object.name }}</span></div>
                 <p class="sapo wow fadeIn" data-wow-delay="0.2s">{{ object.caption }}</p>
             </div>
             <div class="col-md-8 col-sm-12">
