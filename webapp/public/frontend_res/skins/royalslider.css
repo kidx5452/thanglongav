@@ -133,7 +133,7 @@ overflow:hidden;
 display:block; 
 float:left; 
 }
-.visibleNearby .rsSlide iframe{margin-top: 80px}
+
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
   .videoGallery .rsTmb {
@@ -241,7 +241,57 @@ float:left;
 	transition:visibility 0s linear 0.3s,opacity 0.3s linear;
 }
 
+.rsDefault .rsBtnCenterer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
 
+
+.rsDefault .rsCloseVideoBtn {
+    right: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    z-index: 500;
+    position: absolute;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+}
+.rsDefault .rsCloseVideoIcn:hover {
+    background-color: rgba(0,0,0,0.9);
+}
+.rsDefault .rsCloseVideoIcn {
+    margin: 6px;
+    width: 32px;
+    height: 32px;
+    background: url(http://dimsemenov.com/plugins/royal-slider/royalslider/skins/default/rs-default.png) -64px 0;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.rsDefault .rsPlayBtn {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+    width: 64px;
+    height: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    cursor: pointer;
+}
+.rsDefault .rsPlayBtnIcon {
+    width: 64px;
+    display: block;
+    height: 64px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+    background: url(http://dimsemenov.com/plugins/royal-slider/royalslider/skins/default/rs-default.png) no-repeat 0 -32px;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.75);
+}
 .rsGCaption {
 	width: 100%;
 	float: left;

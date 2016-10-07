@@ -89,40 +89,44 @@
         </div><!-- /.container -->
     </div>
 </header>
-{% if slideshow|length >0  %}
+{% if slideshow|length >0 %}
 
-        <div id="gallery-vy" class="royalSlider rsDefault visibleNearby">
-            {% for key,item in slideshow %}
+    <div id="gallery-vy" class="royalSlider rsDefault visibleNearby">
+        {% for key,item in slideshow %}
+            {% if item.linkyoutube|length >0 %}
+                <a class="rsImg" href="/{{ item.avatar }}" data-rsVideo="{{ item.linkyoutube }}">{{ item.captions }}</a>
+            {% else %}
                 <a class="rsContent" href="{{ item.url }}">
-                   {{ item.slidemedia() }}
+                    <img src="/{{ item.avatar }}" class="rsImg"/>
                 </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {#<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            {% for key,item in slideshow %}
+                <li data-target="#myCarousel" data-slide-to="{{ key }}" class="{{ key==0?"active":"" }}"></li>
+            {% endfor %}
+        </ol><!-- Indicators -->
+        <div class="carousel-inner">
+            {% for key,item in slideshow %}
+                <div class="item {{ key==0?'active':'' }}">
+                    <a href="{{ item.url }}"><img src="/{{ item.avatar }}" alt=""></a>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
+                                {{ item.captions }}
+                            </div>
+                        </div><!--/.content -->
+                    </div><!--/.container -->
+                </div>
             {% endfor %}
         </div>
-
-        {#<div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-            <ol class="carousel-indicators">
-                {% for key,item in slideshow %}
-                    <li data-target="#myCarousel" data-slide-to="{{ key }}" class="{{ key==0?"active":"" }}"></li>
-                {% endfor %}
-            </ol><!-- Indicators -->
-            <div class="carousel-inner">
-                {% for key,item in slideshow %}
-                    <div class="item {{ key==0?'active':'' }}">
-                        <a href="{{ item.url }}"><img src="/{{ item.avatar }}" alt=""></a>
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <div class="animated fadeIn wow animated" data-wow-delay="0.5s">
-                                    {{ item.captions }}
-                                </div>
-                            </div><!--/.content -->
-                        </div><!--/.container -->
-                    </div>
-                {% endfor %}
-            </div>
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="icon-prev"></span></a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="icon-next"></span></a>
-        </div><!-- /.carousel -->#}
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="icon-prev"></span></a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="icon-next"></span></a>
+    </div><!-- /.carousel -->#}
 
 {% else %}
     <section>

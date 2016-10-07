@@ -61,11 +61,11 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Link youtube</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="avatars" value="{{ object.avatar }}" class="form-control">
+                                                <input type="text" name="linkyoutube" value="{{ object.linkyoutube }}" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Hoặc {{ labelkey['articleview.lbl_avatar'] }}</label>
+                                            <label class="col-md-2 control-label">{{ labelkey['articleview.lbl_avatar'] }}</label>
                                             <div class="col-md-8">
                                                 {% if object.avatar|length >0 %}
                                                     <p class="clearfix"><img class="thumbnail col-md-2" src="{{ media.host~object.avatar }}" alt=""></p>

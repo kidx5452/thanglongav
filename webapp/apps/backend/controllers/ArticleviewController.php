@@ -48,10 +48,8 @@ class ArticleviewController extends ControllerBase
         }
         if ($this->request->isPost()) {
             try {
-                $datapost = Helper::post_to_array("lang,poskey,atid,sorts,captions,url,avatars");
+                $datapost = Helper::post_to_array("lang,poskey,atid,sorts,captions,url,linkyoutube");
                 if(!empty($catid)) $datapost['catid'] =$catid;
-                $datapost['avatar'] = $datapost['avatars'];
-                unset($datapost['avatars']);
                 $avatar = $this->post_file_key("avatar");
                 if ($avatar != null) $datapost['avatar'] = $avatar;
                 // <editor-fold desc="Validate">
